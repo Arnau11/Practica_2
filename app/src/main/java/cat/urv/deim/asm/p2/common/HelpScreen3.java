@@ -9,16 +9,16 @@ import android.widget.ProgressBar;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class HelpScreen1 extends AppCompatActivity {
+public class HelpScreen3 extends AppCompatActivity {
     private ProgressBar progressBar;
-    private int i =0;
+    private int i =66;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen_1);
         progresoBarra();
-        Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
+        Intent intent = new Intent(HelpScreen3.this, LoginScreen.class);
         startActivity(intent);
     }
 
