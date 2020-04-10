@@ -54,6 +54,7 @@ public class activity_main_menu_screen extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
