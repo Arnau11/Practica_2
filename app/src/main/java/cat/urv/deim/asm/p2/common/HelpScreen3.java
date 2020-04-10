@@ -37,7 +37,7 @@ public class HelpScreen3 extends AppCompatActivity {
                 }
             }
         };
-        t.schedule(tt, 0, 100);
+        t.schedule(tt, 0, 3000);
     }
 
     //Metodo saltar tutorial

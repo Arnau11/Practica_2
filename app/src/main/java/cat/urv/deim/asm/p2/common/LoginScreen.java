@@ -3,6 +3,7 @@ package cat.urv.deim.asm.p2.common;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 public class LoginScreen extends AppCompatActivity {
     public final static String USERS_NAME = "";
@@ -13,5 +14,15 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
+       /* Button button = Button findViewById(R.id.sigInButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+            }
+        });*/
+
     }
+
+
 }
