@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -19,8 +20,13 @@ public class HelpScreen1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen_1);
         progresoBarra();
-        Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
-        startActivity(intent);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
+                startActivity(intent);
+            }
+        },2000);
     }
 
     //Progreso de la barra
@@ -37,7 +43,7 @@ public class HelpScreen1 extends AppCompatActivity {
                 }
             }
         };
-        t.schedule(tt, 0, 2000);
+        t.schedule(tt, 0, 50);
     }
 
     //Metodo saltar tutorial
