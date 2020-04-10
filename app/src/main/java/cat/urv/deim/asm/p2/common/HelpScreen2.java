@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import java.util.Timer;
@@ -36,6 +37,12 @@ public class HelpScreen2 extends AppCompatActivity {
                 }
             }
         };
-        t.schedule(tt, 0, 50);
+        t.schedule(tt, 0, 100);
+    }
+
+    //Metodo saltar tutorial
+    public void siguiente(View view){
+        Intent siguiente = new Intent(HelpScreen2.this,LoginScreen.class);
+        startActivity(siguiente);
     }
 }
