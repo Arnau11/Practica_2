@@ -36,6 +36,6 @@ public class HelpScreen2 extends AppCompatActivity {
                 }
             }
         };
-        t.schedule(tt, 0, 50);
+        t.schedule(tt, 0, 100);
     }
 }
