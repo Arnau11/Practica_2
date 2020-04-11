@@ -13,32 +13,28 @@ import java.util.TimerTask;
 
 public class HelpScreen2 extends AppCompatActivity {
     private ProgressBar progressBar;
-    private int i =30;
+    private int i =50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen2);
-        progresoBarra();
-        Intent intent = new Intent(HelpScreen2.this, HelpScreen3.class);
-        startActivity(intent);
-    }
-
-    //Progreso de la barra
-    public void progresoBarra(){
         progressBar = findViewById(R.id.progressBar2);
-        final Timer t = new Timer();
-        TimerTask tt = new TimerTask(){
-            @Override
-            public void run() {
-                i++;
-                progressBar.setProgress(i);
-                if(i==100){
-                    t.cancel();
+        new Thread(new Runnable(){
+            public void run(){
+                while(i<100){
+                    i++;
+                    progressBar.setProgress(i);
+                    try {
+                        Thread.sleep(60);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
+                Intent intent = new Intent(HelpScreen2.this, HelpScreen3.class);
+                startActivity(intent);
             }
-        };
-        t.schedule(tt, 0, 100);
+        }).start();
     }
 
     //Metodo saltar tutorial

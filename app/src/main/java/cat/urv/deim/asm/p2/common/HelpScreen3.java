@@ -19,31 +19,22 @@ public class HelpScreen3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen3);
-        progresoBarra();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        progressBar = findViewById(R.id.progressBar3);
+        new Thread(new Runnable(){
+            public void run(){
+                while(i<100){
+                    i++;
+                    progressBar.setProgress(i);
+                    try {
+                        Thread.sleep(90);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
                 Intent intent = new Intent(HelpScreen3.this, LoginScreen.class);
                 startActivity(intent);
             }
-        },2000);
-    }
-
-    //Progreso de la barra
-    public void progresoBarra(){
-        progressBar = findViewById(R.id.progressBar3);
-        final Timer t = new Timer();
-        TimerTask tt = new TimerTask(){
-            @Override
-            public void run() {
-                i++;
-                progressBar.setProgress(i);
-                if(i==100){
-                    t.cancel();
-                }
-            }
-        };
-        t.schedule(tt, 0, 75);
+        }).start();
     }
 
     //Metodo saltar tutorial
