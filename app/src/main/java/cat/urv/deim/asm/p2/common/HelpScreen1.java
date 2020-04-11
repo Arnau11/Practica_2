@@ -14,30 +14,27 @@ public class HelpScreen1 extends AppCompatActivity {
     private ProgressBar progressBar;
     private int i =0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen1);
-        progresoBarra();
-        Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
-        startActivity(intent);
-    }
-
-    //Progreso de la barra
-    public void progresoBarra(){
         progressBar = findViewById(R.id.progressBar);
-        final Timer t = new Timer();
-        TimerTask tt = new TimerTask(){
-            @Override
-            public void run() {
-                i++;
-                progressBar.setProgress(i);
-                if(i==100){
-                    t.cancel();
+        new Thread(new Runnable(){
+            public void run(){
+                while(i<100){
+                    i++;
+                    progressBar.setProgress(i);
+                    try {
+                        Thread.sleep(30);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
+                Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
+                startActivity(intent);
             }
-        };
-        t.schedule(tt, 0, 50);
+        }).start();
     }
 
     //Metodo saltar tutorial
