@@ -30,9 +30,10 @@
     <string name="password">Password</string>
     <string name="sign_in">SIGN IN</string>
     <string name="try_again">TRY AGAIN</string>
-
+    <string name="UPS">UPS.. couldn\'t Sign In</string>
+    <string name="your_username">Your username and password don\'t match.\n Please, try again. </string>
 
     <string name="home_second">Home Second</string>
-    <string name="UPS">UPS.. couldn\'t Sign In</string>
+
 
 </resources>
