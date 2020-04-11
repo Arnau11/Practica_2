@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ErrorScreen"></activity>
         <activity android:name=".LoginScreen" />
         <activity android:name=".HelpScreen3" />
         <activity android:name=".HelpScreen2" />
@@ -16,6 +17,7 @@
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
