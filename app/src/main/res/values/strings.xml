@@ -33,5 +33,6 @@
 
 
     <string name="home_second">Home Second</string>
+    <string name="UPS">UPS.. couldn\'t Sign In</string>
 
 </resources>
