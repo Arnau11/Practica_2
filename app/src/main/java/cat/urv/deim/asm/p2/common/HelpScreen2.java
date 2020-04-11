@@ -20,8 +20,7 @@ public class HelpScreen2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen2);
         progresoBarra();
-        Intent intent = new Intent(HelpScreen2.this, HelpScreen3.class);
-        startActivity(intent);
+
     }
 
     //Progreso de la barra
@@ -38,7 +37,9 @@ public class HelpScreen2 extends AppCompatActivity {
                 }
             }
         };
-        t.schedule(tt, 0, 100);
+        t.schedule(tt, 0, 500);
+        Intent intent = new Intent(HelpScreen2.this, HelpScreen3.class);
+        startActivity(intent);
     }
 
     //Metodo saltar tutorial

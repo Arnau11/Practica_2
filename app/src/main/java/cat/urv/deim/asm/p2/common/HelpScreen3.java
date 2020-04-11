@@ -20,13 +20,9 @@ public class HelpScreen3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen3);
         progresoBarra();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(HelpScreen3.this, LoginScreen.class);
-                startActivity(intent);
-            }
-        },2000);
+
+
+
     }
 
     //Progreso de la barra
@@ -43,7 +39,9 @@ public class HelpScreen3 extends AppCompatActivity {
                 }
             }
         };
-        t.schedule(tt, 0, 75);
+        t.schedule(tt, 0, 500);
+        Intent intent = new Intent(HelpScreen3.this, LoginScreen.class);
+        startActivity(intent);
     }
 
     //Metodo saltar tutorial
