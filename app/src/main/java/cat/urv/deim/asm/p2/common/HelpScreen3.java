@@ -18,7 +18,7 @@ public class HelpScreen3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help_screen_1);
+        setContentView(R.layout.activity_help_screen3);
         progresoBarra();
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -31,7 +31,7 @@ public class HelpScreen3 extends AppCompatActivity {
 
     //Progreso de la barra
     public void progresoBarra(){
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar3);
         final Timer t = new Timer();
         TimerTask tt = new TimerTask(){
             @Override
