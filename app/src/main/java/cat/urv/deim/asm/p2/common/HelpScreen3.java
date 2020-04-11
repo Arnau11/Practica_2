@@ -26,7 +26,7 @@ public class HelpScreen3 extends AppCompatActivity {
                     i++;
                     progressBar.setProgress(i);
                     try {
-                        Thread.sleep(90);
+                        Thread.sleep(46);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
