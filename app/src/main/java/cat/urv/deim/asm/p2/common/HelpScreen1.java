@@ -31,8 +31,9 @@ public class HelpScreen1 extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
-                startActivity(intent);
+                if(mThread.isAlive()){
+                    Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
+                    startActivity(intent);}
             }
         });
         mThread.start();
@@ -40,8 +41,9 @@ public class HelpScreen1 extends AppCompatActivity {
 
     //Metodo saltar tutorial
     public void siguiente(View view){
+        mThread.interrupt();
         Intent siguiente = new Intent(HelpScreen1.this,LoginScreen.class);
-        mThread.stop();
+
         startActivity(siguiente);
     }
 }

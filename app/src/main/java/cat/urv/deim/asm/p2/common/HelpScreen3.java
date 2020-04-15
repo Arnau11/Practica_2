@@ -42,7 +42,7 @@ public class HelpScreen3 extends AppCompatActivity {
     //Metodo saltar tutorial
     public void siguiente(View view){
         Intent siguiente = new Intent(HelpScreen3.this,LoginScreen.class);
-        mThread.stop();
+        mThread.interrupt();
         startActivity(siguiente);
     }
 }
