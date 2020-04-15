@@ -20,21 +20,21 @@ public class HelpScreen1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen1);
         progressBar = findViewById(R.id.progressBar);
-        new Thread(new Runnable(){
-            public void run(){
-                while(i<100){
-                    i++;
-                    progressBar.setProgress(i);
-                    try {
-                        Thread.sleep(30);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
-                startActivity(intent);
+        run();
+    }
+
+    public void run(){
+        while(i<100){
+            i++;
+            progressBar.setProgress(i);
+            try {
+                Thread.sleep(30);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        }).start();
+        }
+        Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
+        startActivity(intent);
     }
 
     //Metodo saltar tutorial
