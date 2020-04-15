@@ -13,33 +13,35 @@ import java.util.TimerTask;
 public class HelpScreen1 extends AppCompatActivity {
     private ProgressBar progressBar;
     private int i =0;
-
+    private Thread mThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen1);
         progressBar = findViewById(R.id.progressBar);
-        run();
-    }
-
-    public void run(){
-        while(i<100){
-            i++;
-            progressBar.setProgress(i);
-            try {
-                Thread.sleep(30);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        this.mThread = new Thread(new Runnable(){
+            public void run(){
+                while(i<100){
+                    i++;
+                    progressBar.setProgress(i);
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
+                startActivity(intent);
             }
-        }
-        Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
-        startActivity(intent);
+        });
+        mThread.start();
     }
 
     //Metodo saltar tutorial
     public void siguiente(View view){
         Intent siguiente = new Intent(HelpScreen1.this,LoginScreen.class);
+        mThread.stop();
         startActivity(siguiente);
     }
 }
