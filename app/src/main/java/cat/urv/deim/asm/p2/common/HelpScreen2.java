@@ -15,6 +15,7 @@ public class HelpScreen2 extends AppCompatActivity {
     private ProgressBar progressBar;
     private int i =50;
     private Thread mThread;
+    private boolean saltar = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,10 @@ public class HelpScreen2 extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                Intent intent = new Intent(HelpScreen2.this, HelpScreen3.class);
-                startActivity(intent);
+                if(saltar){
+                    Intent intent = new Intent(HelpScreen2.this, HelpScreen3.class);
+                    startActivity(intent);
+                }
             }
         });
         mThread.start();
@@ -41,8 +44,8 @@ public class HelpScreen2 extends AppCompatActivity {
 
     //Metodo saltar tutorial
     public void siguiente(View view){
+        saltar=false;
         Intent siguiente = new Intent(HelpScreen2.this,LoginScreen.class);
-        mThread.interrupt();
         startActivity(siguiente);
     }
 }
