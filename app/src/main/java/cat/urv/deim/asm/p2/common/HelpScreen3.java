@@ -15,7 +15,7 @@ public class HelpScreen3 extends AppCompatActivity {
     private ProgressBar progressBar;
     private int i =66;
     private Thread mThread;
-    private boolean saltar = true;
+    private boolean skipTutorial = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +28,15 @@ public class HelpScreen3 extends AppCompatActivity {
                     i++;
                     progressBar.setProgress(i);
                     try {
-                        Thread.sleep(46);
+                        Thread.sleep(88);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                if(saltar){
+                if(skipTutorial){
                     Intent intent = new Intent(HelpScreen3.this, LoginScreen.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });
@@ -43,9 +44,10 @@ public class HelpScreen3 extends AppCompatActivity {
     }
 
     //Metodo saltar tutorial
-    public void siguiente(View view){
-        saltar=false;
+    public void skipTutorial(View view){
+        skipTutorial=false;
         Intent siguiente = new Intent(HelpScreen3.this,LoginScreen.class);
         startActivity(siguiente);
+        finish();
     }
 }
