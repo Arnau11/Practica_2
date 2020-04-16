@@ -13,14 +13,15 @@ import java.util.TimerTask;
 public class HelpScreen1 extends AppCompatActivity {
     private ProgressBar progressBar;
     private int i =0;
-
+    private Thread mThread;
+    private boolean skipTutorial = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_screen1);
         progressBar = findViewById(R.id.progressBar);
-        new Thread(new Runnable(){
+        this.mThread = new Thread(new Runnable(){
             public void run(){
                 while(i<100){
                     i++;
@@ -31,15 +32,21 @@ public class HelpScreen1 extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
-                startActivity(intent);
+                if(skipTutorial){
+                    Intent intent = new Intent(HelpScreen1.this, HelpScreen2.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
-        }).start();
+        });
+        mThread.start();
     }
 
     //Metodo saltar tutorial
-    public void siguiente(View view){
+    public void skipTutorial(View view){
+        skipTutorial=false;
         Intent siguiente = new Intent(HelpScreen1.this,LoginScreen.class);
         startActivity(siguiente);
+        finish();
     }
 }
