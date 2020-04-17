@@ -30,10 +30,10 @@ public class LoginScreen extends AppCompatActivity {
                 String usersPassword = passwordText.getText().toString();
 
                 if(isUser(usersEmail, usersPassword)) {
-                    /*Intent intent = new Intent(LoginScreen.this, MainScreen.class);
+                    Intent intent = new Intent(LoginScreen.this, MainActivity.class);
                     intent.putExtra("email",usersEmail);
                     intent.putExtra("pass",usersPassword);
-                    startActivity(intent);*/
+                    startActivity(intent);
                 } else {
                     Intent intent = new Intent(LoginScreen.this, ErrorScreen.class);
                     startActivity(intent);
@@ -44,8 +44,8 @@ public class LoginScreen extends AppCompatActivity {
         Button anonymousButton = (Button) findViewById(R.id.anonymousButton);
         anonymousButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                /*Intent intent = new Intent(LoginScreen.this, MainScreen.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
