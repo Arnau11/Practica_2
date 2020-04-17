@@ -14,12 +14,19 @@ public class LoginScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+        Intent intent = this.getIntent();
 
+        if (intent.getExtras() == null) {
+            Button anonymousButton = (Button) findViewById(R.id.anonymousButton);
+            anonymousButton.setText(getString(R.string.login_button_A));
+        } else {
+            Button anonymousButton = (Button) findViewById(R.id.anonymousButton);
+            anonymousButton.setText(getString(R.string.login_button_C));
+            //TODO: MainScreen passar "intent.putExtra("algo",algo);"
+        }
 
-        //TODO: Posar nom de la pantalla principal. Passar les dades de l'usuari
 
        Button signInButton = (Button) findViewById(R.id.signInButton);
        signInButton.setOnClickListener(new View.OnClickListener() {
