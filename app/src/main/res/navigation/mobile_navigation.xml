@@ -7,27 +7,33 @@
 
     <fragment
         android:id="@+id/nav_news"
-        android:name="com.example.prova.ui.news.newsFragment"
+        android:name="cat.urv.deim.asm.p2.common.ui.news.newsFragment"
         android:label="@string/menu_news"
-        tools:layout="@layout/fragment_news" >
+        tools:layout="@layout/fragment_news">
     </fragment>
 
     <fragment
         android:id="@+id/nav_articles"
-        android:name="com.example.prova.ui.articles.articlesFragment"
+        android:name="cat.urv.deim.asm.p2.common.ui.articles.articlesFragment"
         android:label="@string/menu_articles"
         tools:layout="@layout/fragment_articles" />
 
     <fragment
         android:id="@+id/nav_events"
-        android:name="com.example.prova.ui.events.eventsFragment"
+        android:name="cat.urv.deim.asm.p2.common.ui.events.eventsFragment"
         android:label="@string/menu_events"
         tools:layout="@layout/fragment_events" />
 
     <fragment
         android:id="@+id/nav_calendar"
-        android:name="com.example.prova.ui.calendar.calendarFragment"
+        android:name="cat.urv.deim.asm.p2.common.ui.calendar.calendarFragment"
         android:label="@string/menu_calendar"
         tools:layout="@layout/fragment_calendar" />
+
+    <activity
+        android:id="@+id/nav_profile"
+        android:name="cat.urv.deim.asm.p2.common.ProfileActivity"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/activity_profile" />
 
 </navigation>
