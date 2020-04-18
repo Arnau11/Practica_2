@@ -24,7 +24,7 @@ public class LoginScreen extends AppCompatActivity {
         } else {
             Button anonymousButton = (Button) findViewById(R.id.anonymousButton);
             anonymousButton.setText(getString(R.string.login_button_C));
-            //TODO: MainScreen passar "intent.putExtra("algo",algo);"
+
         }
 
 
@@ -40,6 +40,7 @@ public class LoginScreen extends AppCompatActivity {
                     Intent intent = new Intent(LoginScreen.this, MainActivity.class);
                     intent.putExtra("email",usersEmail);
                     intent.putExtra("pass",usersPassword);
+                    intent.putExtra("isAnonymous", false);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(LoginScreen.this, ErrorScreen.class);
@@ -52,6 +53,7 @@ public class LoginScreen extends AppCompatActivity {
         anonymousButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                intent.putExtra("isAnonymous", true);
                 startActivity(intent);
             }
         });

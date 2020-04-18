@@ -19,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
+    /*
+    //TODO: aquesta funcio serveix per saber si l'usuari es anonim o no
+    Boolean isAnonymous = getIntent().getExtras().getBoolean("isAnonymous");
+    //TODO: aquest tros de codi el necessito que el poseu despres de declarar l'intent  i abans de startactivity per anar a
+    la loginActivity en el cas que no estigues autentificat l'usuari.
+    intent.putExtra("fromMenu", true);*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
