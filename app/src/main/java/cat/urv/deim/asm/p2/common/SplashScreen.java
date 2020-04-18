@@ -27,12 +27,14 @@ public class SplashScreen extends AppCompatActivity {
                     editor.commit();
                     Intent intent = new Intent(SplashScreen.this, HelpScreen1.class);
                     startActivity(intent);
+                    finish();
                 } else{
                     Intent intent = new Intent(SplashScreen.this, LoginScreen.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         },2000);
-        finish();
+
     }
 }
