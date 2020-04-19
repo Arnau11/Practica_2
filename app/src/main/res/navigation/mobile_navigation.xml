@@ -30,11 +30,5 @@
         android:label="@string/menu_calendar"
         tools:layout="@layout/fragment_calendar" />
 
-    <activity
-        android:id="@+id/nav_profile"
-        android:name="cat.urv.deim.asm.p2.common.ProfileActivity"
-        android:label="@string/menu_profile"
-        tools:layout="@layout/activity_profile" />
-
 
 </navigation>
