@@ -33,8 +33,10 @@ public class ProfileActivity extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(ProfileActivity.this,R.color.colorPrimaryDark));
 
         setContentView(R.layout.activity_profile);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("User profile");
         getSupportActionBar().setDisplayShowHomeEnabled(true);

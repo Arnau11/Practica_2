@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Practica2</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    // Navigation menu strings
+
+    <string name="nav_header_title">Dev Community</string>
+
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configuración</string>
+    <string name="action_search">Buscar</string>
+
+    <string name="menu_news">Noticias</string>
+    <string name="menu_articles">Artículos</string>
+    <string name="menu_events">Eventos</string>
+    <string name="menu_calendar">Calendario</string>
+
+    <string name="menu_profile">Perfil</string>
+    <string name="menu_favorites">Favoritos</string>
+    <string name="menu_bookmarks">Sigue leyendo</string>
+
+    <string name="menu_faqs">FAQS</string>
+    <string name="menu_settings">Settings</string>
+
+    //Arnau's strings
+    <string name="login_button_A">ANONYMOUS USER</string>
+    <string name="login_button_C">CONTINUE ANONYMOUSLY</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="try_again">TRY AGAIN</string>
+    <string name="UPS">UPS.. couldn\'t Sign In</string>
+    <string name="your_username">Your username and password don\'t match.\n Please, try again. </string>
+
+
+</resources>
