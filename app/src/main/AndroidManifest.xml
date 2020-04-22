@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar" >
-        <activity android:name=".ProfileActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ProfileActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".ErrorScreen" />
         <activity android:name=".LoginScreen" />
