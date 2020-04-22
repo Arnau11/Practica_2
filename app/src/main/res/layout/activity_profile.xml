@@ -33,35 +33,47 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="16dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
-                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="8dp"
                 android:text="Sandra Adams"
                 android:textColor="#BB000000"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#A0AAAAAA" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="30dp"
+                android:paddingLeft="61dp"
+                android:paddingTop="20dp"
                 android:text="sandra.adams@email.com"
                 android:textColor="#CC000000" />
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="48dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="84dp"
-                android:layout_marginBottom="316dp"
-                android:paddingTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="61dp"
+                android:paddingBottom="45dp"
                 android:text="Email" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#A1AAAAAA" />
+
         </LinearLayout>
 
     </LinearLayout>
