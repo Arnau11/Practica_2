@@ -25,7 +25,7 @@ public class LoginScreen extends AppCompatActivity {
 
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        getWindow().setStatusBarColor(ContextCompat.getColor(LoginScreen.this,R.color.colorPrimaryDark));
+        window.setStatusBarColor(ContextCompat.getColor(LoginScreen.this,R.color.colorPrimaryDark));
 
         setContentView(R.layout.activity_login_screen);
 
@@ -87,8 +87,9 @@ public class LoginScreen extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(myIntent, 0);
+        Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+        intent.putExtra("isAnonymous", true);
+        startActivityForResult(intent, 0);
         return true;
     }
 
