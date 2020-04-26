@@ -19,7 +19,7 @@ public class FAQsActivity extends AppCompatActivity {
         Window window = FAQsActivity.this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(FAQsActivity.this,R.color.colorPrimaryDark));
+        window.setStatusBarColor(ContextCompat.getColor(FAQsActivity.this, R.color.colorPrimaryDark));
 
         setContentView(R.layout.activity_faqs);
 
@@ -27,13 +27,24 @@ public class FAQsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("FAQs");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent intent = new Intent(FAQsActivity.this, MainActivity.class);
-        intent.putExtra("isAnonymous", false);
-        startActivityForResult(intent, 0);
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent intent1 = this.getIntent();
+        Intent intent2 = new Intent(FAQsActivity.this, MainActivity.class);
+
+        final Boolean isAnonymous = getIntent().getExtras().getBoolean("isAnonymous");
+
+        if (isAnonymous)
+            intent2.putExtra("isAnonymous", true);
+        else
+            intent2.putExtra("isAnonymous", false);
+
+        startActivityForResult(intent2, 0);
+
         return true;
     }
 }

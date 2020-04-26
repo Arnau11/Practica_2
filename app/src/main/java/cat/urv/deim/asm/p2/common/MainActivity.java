@@ -100,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
 
                             case R.id.nav_faqs:
                                 Intent intent = new Intent(MainActivity.this, FAQsActivity.class);
+                                if(isAnonymous)
+                                    intent.putExtra("isAnonymous",true);
+                                else
+                                    intent.putExtra("isAnonymous",false);
                                 startActivity(intent);
                                 break;
                         }

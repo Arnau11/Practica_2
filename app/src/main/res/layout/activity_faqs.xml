@@ -13,7 +13,7 @@
         layout="@layout/app_bar_profile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="-121dp" />
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="206dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
