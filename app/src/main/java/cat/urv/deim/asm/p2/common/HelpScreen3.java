@@ -1,11 +1,13 @@
 package cat.urv.deim.asm.p2.common;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.Window;
 import android.widget.ProgressBar;
 
 import java.util.Timer;
@@ -20,6 +22,9 @@ public class HelpScreen3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window window = HelpScreen3.this.getWindow();
+        window.setStatusBarColor(ContextCompat.getColor(HelpScreen3.this,R.color.colorPrimary));
+
         setContentView(R.layout.activity_help_screen3);
         progressBar = findViewById(R.id.progressBar3);
         this.mThread = new Thread(new Runnable(){

@@ -5,5 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorButton">#00BCD4</color>
     <color name="colorDivider">#808080</color>
+    <color name="colorGray">#E0E0E0</color>
+
 
 </resources>

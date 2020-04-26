@@ -25,19 +25,20 @@ public class LoginScreen extends AppCompatActivity {
 
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(LoginScreen.this,R.color.colorPrimaryDark));
 
         setContentView(R.layout.activity_login_screen);
 
         Intent intent = this.getIntent();
 
         if (intent.getExtras() == null) {
+            window.setStatusBarColor(ContextCompat.getColor(LoginScreen.this,R.color.colorGray));
             Button anonymousButton = (Button) findViewById(R.id.anonymousButton);
             anonymousButton.setText(getString(R.string.login_button_A));
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
             getSupportActionBar().hide();
         } else {
+            window.setStatusBarColor(ContextCompat.getColor(LoginScreen.this,R.color.colorPrimaryDark));
             Button anonymousButton = (Button) findViewById(R.id.anonymousButton);
             anonymousButton.setText(getString(R.string.login_button_C));
             Toolbar toolbar = findViewById(R.id.toolbar);

@@ -97,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 break;
+
+                            case R.id.nav_faqs:
+                                Intent intent = new Intent(MainActivity.this, FAQsActivity.class);
+                                startActivity(intent);
+                                break;
                         }
 
                         if(fragmentTransaction) {
