@@ -33,17 +33,16 @@ public class FAQsActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        Intent intent1 = this.getIntent();
-        Intent intent2 = new Intent(FAQsActivity.this, MainActivity.class);
-
         final Boolean isAnonymous = getIntent().getExtras().getBoolean("isAnonymous");
 
-        if (isAnonymous)
-            intent2.putExtra("isAnonymous", true);
-        else
-            intent2.putExtra("isAnonymous", false);
+        Intent intent = new Intent(FAQsActivity.this, MainActivity.class);
 
-        startActivityForResult(intent2, 0);
+        if (isAnonymous)
+            intent.putExtra("isAnonymous", true);
+        else
+            intent.putExtra("isAnonymous", false);
+
+        startActivityForResult(intent, 0);
 
         return true;
     }
