@@ -40,5 +40,12 @@
     <string name="UPS">UPS.. couldn\'t Sign In</string>
     <string name="your_username">Your username and password don\'t match.\n Please, try again. </string>
 
+    <string name="help_screen1">Estar en contacte</string>
+    <string name="help_screen2">Treball en xarxa</string>
+    <string name="help_screen3">Aprendre</string>
+    <string name="skip_tutorial">Saltar tutorial</string>
+    <string name="profile_title">Perfil d usuari</string>
+
+
 
 </resources>

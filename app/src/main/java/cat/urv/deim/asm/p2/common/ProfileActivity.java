@@ -38,7 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("User profile");
+        getSupportActionBar().setTitle(R.string.profile_title);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 

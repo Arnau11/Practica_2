@@ -40,5 +40,13 @@
     <string name="UPS">UPS.. couldn\'t Sign In</string>
     <string name="your_username">Your username and password don\'t match.\n Please, try again. </string>
 
+    <string name="help_screen1">Be in touch</string>
+    <string name="help_screen2">Networking</string>
+    <string name="help_screen3">Learn</string>
+    <string name="skip_tutorial">Skip tutorial</string>
+    <string name="profile_title">User Profile</string>
+
+
+
 
 </resources>
