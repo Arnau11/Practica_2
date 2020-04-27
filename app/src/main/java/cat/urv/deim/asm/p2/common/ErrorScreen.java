@@ -24,11 +24,12 @@ public class ErrorScreen extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_error_screen);
-
+        final Intent intentIn = this.getIntent();
         Button tryAgainButton = (Button) findViewById(R.id.tryAgainButton);
         tryAgainButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(ErrorScreen.this, LoginScreen.class);
+                intent.putExtras(intentIn);
                 startActivity(intent);
                 finish();
             }

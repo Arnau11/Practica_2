@@ -28,9 +28,9 @@ public class LoginScreen extends AppCompatActivity {
 
         setContentView(R.layout.activity_login_screen);
 
-        Intent intent = this.getIntent();
+        final Intent intentIn = this.getIntent();
 
-        if (intent.getExtras() == null) {
+        if (intentIn.getExtras() == null) {
             window.setStatusBarColor(ContextCompat.getColor(LoginScreen.this,R.color.colorGray));
             Button anonymousButton = (Button) findViewById(R.id.anonymousButton);
             anonymousButton.setText(getString(R.string.login_button_A));
@@ -65,6 +65,7 @@ public class LoginScreen extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(LoginScreen.this, ErrorScreen.class);
+                    intent.putExtras(intentIn);
                     startActivity(intent);
                 }
             }

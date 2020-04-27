@@ -30,15 +30,15 @@
     <string name="menu_faqs">FAQS</string>
     <string name="menu_settings">Configuració</string>
 
-    //Arnau's strings
-    <string name="login_button_A">ANONYMOUS USER</string>
-    <string name="login_button_C">CONTINUE ANONYMOUSLY</string>
+
+    <string name="login_button_A">USUARI ANÒNIM</string>
+    <string name="login_button_C">CONTINUAR ANÒNIMAMENT</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="sign_in">SIGN IN</string>
-    <string name="try_again">TRY AGAIN</string>
-    <string name="UPS">UPS.. couldn\'t Sign In</string>
-    <string name="your_username">Your username and password don\'t match.\n Please, try again. </string>
+    <string name="password">Contrassenya</string>
+    <string name="sign_in">ENTRA</string>
+    <string name="try_again">REINTENTAR</string>
+    <string name="UPS">UPS.. alguna cosa no ha anat bé</string>
+    <string name="your_username">El teu nom d\'usuari i contrassenya no coincideixen.\n Si us plau, torna-ho a intentar. </string>
 
     <string name="help_screen1">Estar en contacte</string>
     <string name="help_screen2">Treball en xarxa</string>

@@ -30,15 +30,15 @@
     <string name="menu_faqs">FAQS</string>
     <string name="menu_settings">Settings</string>
 
-    //Arnau's strings
-    <string name="login_button_A">ANONYMOUS USER</string>
-    <string name="login_button_C">CONTINUE ANONYMOUSLY</string>
+
+    <string name="login_button_A">USUARIO ANÓNIMO</string>
+    <string name="login_button_C">CONTINUAR ANÒNIMAMENTE</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="sign_in">SIGN IN</string>
-    <string name="try_again">TRY AGAIN</string>
-    <string name="UPS">UPS.. couldn\'t Sign In</string>
-    <string name="your_username">Your username and password don\'t match.\n Please, try again. </string>
+    <string name="password">Contraseña</string>
+    <string name="sign_in">ENTRAR</string>
+    <string name="try_again">VOLVER A INTENTAR</string>
+    <string name="UPS">UPS.. alguna cosa ha ido mal</string>
+    <string name="your_username">Tu nombre de usuario y contraseña no coinciden.\n Por favor, vuelvalo a intentar. </string>
 
     <string name="help_screen1">Estar en contacto</string>
     <string name="help_screen2">Trabajar en las redes</string>

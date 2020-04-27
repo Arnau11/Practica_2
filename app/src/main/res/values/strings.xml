@@ -30,7 +30,7 @@
     <string name="menu_faqs">FAQS</string>
     <string name="menu_settings">Settings</string>
 
-    //Arnau's strings
+    
     <string name="login_button_A">ANONYMOUS USER</string>
     <string name="login_button_C">CONTINUE ANONYMOUSLY</string>
     <string name="email">Email</string>
