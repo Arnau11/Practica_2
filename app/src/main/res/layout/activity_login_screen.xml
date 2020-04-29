@@ -12,8 +12,8 @@
         layout="@layout/app_bar_profile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="-121dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -31,53 +31,51 @@
         android:id="@+id/loginEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorGray"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:singleLine="false"
         android:textAlignment="center"
-        android:textColor="@android:color/secondary_text_light"
-        android:textColorHint="@color/cardview_dark_background"
+        android:textColor="@color/colorTextGray"
+        android:textColorHint="@color/colorTextGray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.632" />
 
     <EditText
         android:id="@+id/loginPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:autoText="false"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorGray"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textAlignment="center"
-        android:textColor="@android:color/secondary_text_light"
-        android:textColorHint="@color/cardview_dark_background"
+        android:textColor="@color/colorTextGray"
+        android:textColorHint="@color/colorTextGray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.709" />
 
     <Button
         android:id="@+id/signInButton"
-        android:layout_width="260dp"
-        android:layout_height="54dp"
+        android:layout_width="255dp"
+        android:layout_height="45dp"
         android:background="@color/colorButton"
         android:text="@string/sign_in"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        app:layout_constraintVertical_bias="0.822" />
 
     <Button
         android:id="@+id/anonymousButton"
@@ -90,6 +88,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
+        app:layout_constraintVertical_bias="0.917" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
