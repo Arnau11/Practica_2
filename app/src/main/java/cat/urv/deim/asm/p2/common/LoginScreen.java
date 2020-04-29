@@ -45,7 +45,7 @@ public class LoginScreen extends AppCompatActivity {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setTitle("Login");
+            getSupportActionBar().setTitle(R.string.login_title);
         }
 
 

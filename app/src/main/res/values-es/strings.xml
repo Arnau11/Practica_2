@@ -1,14 +1,5 @@
 <resources>
     <string name="app_name">DevCommunity</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
     // Navigation menu strings
 
@@ -30,9 +21,11 @@
     <string name="menu_faqs">FAQS</string>
     <string name="menu_settings">Settings</string>
 
+    // Log in strings
 
+    <string name="login_title">Inicio de sessión</string>
     <string name="login_button_A">USUARIO ANÓNIMO</string>
-    <string name="login_button_C">CONTINUAR ANÒNIMAMENTE</string>
+    <string name="login_button_C">CONTINUAR ANÓNIMAMENTE</string>
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
     <string name="sign_in">ENTRAR</string>
@@ -40,9 +33,11 @@
     <string name="UPS">UPS.. alguna cosa ha ido mal</string>
     <string name="your_username">Tu nombre de usuario y contraseña no coinciden.\n Por favor, vuelvalo a intentar. </string>
 
-    <string name="help_screen1">Estar en contacto</string>
-    <string name="help_screen2">Trabajar en las redes</string>
-    <string name="help_screen3">Aprender</string>
+    // Tutorial strings
+
+    <string name="help_screen1">Esté en contacto</string>
+    <string name="help_screen2">Trabaja en las redes</string>
+    <string name="help_screen3">Aprende</string>
     <string name="skip_tutorial">Saltar tutorial</string>
     <string name="profile_title">Perfil del usuario</string>
 

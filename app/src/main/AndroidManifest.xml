@@ -11,7 +11,6 @@
         android:theme="@style/AppTheme.NoActionBar" >
         <activity android:name=".ProfileActivity"/>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".FAQsActivity"/>
         <activity android:name=".ErrorScreen" />
         <activity android:name=".LoginScreen" />
         <activity android:name=".HelpScreen3" />

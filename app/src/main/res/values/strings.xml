@@ -1,14 +1,5 @@
 <resources>
     <string name="app_name">DevCommunity</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
     // Navigation menu strings
 
@@ -30,7 +21,9 @@
     <string name="menu_faqs">FAQS</string>
     <string name="menu_settings">Settings</string>
 
-    
+    // Log in strings
+
+    <string name="login_title">Log in</string>
     <string name="login_button_A">ANONYMOUS USER</string>
     <string name="login_button_C">CONTINUE ANONYMOUSLY</string>
     <string name="email">Email</string>
@@ -40,13 +33,12 @@
     <string name="UPS">UPS.. couldn\'t Sign In</string>
     <string name="your_username">Your username and password don\'t match.\n Please, try again. </string>
 
+    // Tutorial strings
+
     <string name="help_screen1">Be in touch</string>
     <string name="help_screen2">Networking</string>
     <string name="help_screen3">Learn</string>
     <string name="skip_tutorial">Skip tutorial</string>
     <string name="profile_title">User Profile</string>
-
-
-
 
 </resources>
