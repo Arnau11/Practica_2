@@ -1,11 +1,7 @@
 <resources>
-    <string name="app_name">DevCommunity</string>
 
     // Navigation menu strings
 
-    <string name="nav_header_title">Dev Community</string>
-
-    <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Configuración</string>
     <string name="action_search">Buscar</string>
 

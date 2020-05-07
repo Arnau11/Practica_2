@@ -1,11 +1,6 @@
 <resources>
-    <string name="app_name">DevCommunity</string>
-
     // Navigation menu strings
 
-    <string name="nav_header_title">Dev Community</string>
-
-    <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Configuració</string>
     <string name="action_search">Buscar</string>
 
@@ -31,7 +26,7 @@
     <string name="sign_in">ENTRA</string>
     <string name="try_again">REINTENTAR</string>
     <string name="UPS">UPS.. alguna cosa no ha anat bé</string>
-    <string name="your_username">El teu nom d\'usuari i contrassenya no coincideixen.\n Si us plau, torna-ho a intentar. </string>
+    <string name="your_username">El teu nom d\'usuari i contrasenya no coincideixen.\n Si us plau, torna-ho a intentar. </string>
 
     // Tutorial strings
 
@@ -39,6 +34,6 @@
     <string name="help_screen2">Treballa en xarxa</string>
     <string name="help_screen3">Aprèn</string>
     <string name="skip_tutorial">Saltar tutorial</string>
-    <string name="profile_title">Perfil d"usuari</string>
+    <string name="profile_title">Perfil d\'usuari</string>
 
 </resources>
