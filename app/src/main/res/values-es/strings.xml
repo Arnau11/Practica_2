@@ -31,9 +31,9 @@
 
     // Tutorial strings
 
-    <string name="help_screen1">Esté en contacto</string>
+    <string name="help_screen1">Estar en contacto</string>
     <string name="help_screen2">Trabaja en las redes</string>
-    <string name="help_screen3">Aprende</string>
+    <string name="help_screen3">Aprender</string>
     <string name="skip_tutorial">Saltar tutorial</string>
     <string name="profile_title">Perfil del usuario</string>
 
