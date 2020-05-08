@@ -27,6 +27,10 @@ import cat.urv.deim.asm.p2.common.ui.news.newsFragment;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    static int index=0;
+    static boolean fragmentTransaction = false;
+    static Fragment fragment = null;
+    static MenuItem itemMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,25 +69,26 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                        boolean fragmentTransaction = false;
-                        Fragment fragment = null;
-
                         switch(menuItem.getItemId()){
                             case R.id.nav_news:
                                 fragmentTransaction = true;
                                 fragment = new newsFragment();
+                                index = 0;
                                 break;
                             case R.id.nav_articles:
                                 fragmentTransaction = true;
                                 fragment = new articlesFragment();
+                                index = 1;
                                 break;
                             case R.id.nav_events:
                                 fragmentTransaction = true;
                                 fragment = new eventsFragment();
+                                index = 2;
                                 break;
                             case R.id.nav_calendar:
                                 fragmentTransaction = true;
                                 fragment = new calendarFragment();
+                                index = 3;
                                 break;
                             case R.id.nav_faqs:
                                 fragmentTransaction = true;
@@ -120,6 +125,43 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 });
+
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.getMenu().getItem(index).setChecked(true);
+
+        boolean fragmentTransaction = false;
+        Fragment fragment = null;
+
+        switch(index) {
+            case 0:
+                fragmentTransaction = true;
+                fragment = new newsFragment();
+                index = 0;
+                break;
+            case 1:
+                fragmentTransaction = true;
+                fragment = new articlesFragment();
+                index = 1;
+                break;
+            case 2:
+                fragmentTransaction = true;
+                fragment = new eventsFragment();
+                index = 2;
+                break;
+            case 3:
+                fragmentTransaction = true;
+                fragment = new calendarFragment();
+                index = 3;
+                break;
+        }
+
+        if(fragmentTransaction) {
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.nav_host_fragment, fragment)
+                    .commit();
+            
+        }
 
     }
 
