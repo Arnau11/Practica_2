@@ -30,5 +30,11 @@
         android:label="@string/menu_calendar"
         tools:layout="@layout/fragment_calendar" />
 
+    <fragment
+        android:id="@+id/nav_faqs"
+        android:name="cat.urv.deim.asm.p2.common.ui.faqs.faqsFragment"
+        android:label="@string/menu_faqs"
+        tools:layout="@layout/fragment_faqs" />
+
 
 </navigation>

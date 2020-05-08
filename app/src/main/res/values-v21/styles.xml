@@ -1,5 +1,6 @@
 <resources>
 
+    // Set the gray color of the state bar in the splash screen.
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

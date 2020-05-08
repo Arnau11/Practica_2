@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 import cat.urv.deim.asm.p2.common.ui.articles.articlesFragment;
 import cat.urv.deim.asm.p2.common.ui.calendar.calendarFragment;
 import cat.urv.deim.asm.p2.common.ui.events.eventsFragment;
+import cat.urv.deim.asm.p2.common.ui.faqs.faqsFragment;
 import cat.urv.deim.asm.p2.common.ui.news.newsFragment;
 
 
@@ -84,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
                                 fragmentTransaction = true;
                                 fragment = new calendarFragment();
                                 break;
+                            case R.id.nav_faqs:
+                                fragmentTransaction = true;
+                                fragment = new faqsFragment();
+                                break;
                             case R.id.nav_profile:
 
                                 if(!isAnonymous){
@@ -96,15 +101,6 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
 
-                                break;
-
-                            case R.id.nav_faqs:
-                                Intent intent = new Intent(MainActivity.this, FAQsActivity.class);
-                                if(isAnonymous)
-                                    intent.putExtra("isAnonymous",true);
-                                else
-                                    intent.putExtra("isAnonymous",false);
-                                startActivity(intent);
                                 break;
                         }
 
@@ -126,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {
