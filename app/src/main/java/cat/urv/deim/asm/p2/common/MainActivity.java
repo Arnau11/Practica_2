@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     static int index=0;
     static boolean fragmentTransaction = false;
     static Fragment fragment = null;
-    static MenuItem itemMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
+                        fragmentTransaction = false;
+                        fragment = null;
+
                         switch(menuItem.getItemId()){
                             case R.id.nav_news:
                                 fragmentTransaction = true;
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.nav_faqs:
                                 fragmentTransaction = true;
                                 fragment = new faqsFragment();
+                                index = 4;
                                 break;
                             case R.id.nav_profile:
 
@@ -129,29 +132,29 @@ public class MainActivity extends AppCompatActivity {
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.getMenu().getItem(index).setChecked(true);
 
-        boolean fragmentTransaction = false;
-        Fragment fragment = null;
+        fragmentTransaction = false;
+        fragment = null;
 
         switch(index) {
             case 0:
                 fragmentTransaction = true;
                 fragment = new newsFragment();
-                index = 0;
                 break;
             case 1:
                 fragmentTransaction = true;
                 fragment = new articlesFragment();
-                index = 1;
                 break;
             case 2:
                 fragmentTransaction = true;
                 fragment = new eventsFragment();
-                index = 2;
                 break;
             case 3:
                 fragmentTransaction = true;
                 fragment = new calendarFragment();
-                index = 3;
+                break;
+            case 4:
+                fragmentTransaction = true;
+                fragment = new faqsFragment();
                 break;
         }
 
@@ -160,8 +163,12 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_host_fragment, fragment)
                     .commit();
-            
+
+            getSupportActionBar().setTitle(navigationView.getMenu().getItem(index).getTitle());
+
         }
+
+        drawer.closeDrawers();
 
     }
 
