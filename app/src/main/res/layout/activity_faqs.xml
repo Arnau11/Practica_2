@@ -6,14 +6,14 @@
     android:id="@+id/constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity" >
+    tools:context=".FAQSActivity" >
 
     <include
         android:id="@+id/include"
-        layout="@layout/app_bar_profile"
+        layout="@layout/app_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="206dp" />
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="-121dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,6 +38,14 @@
     <string name="help_screen2">Networking</string>
     <string name="help_screen3">Learn</string>
     <string name="skip_tutorial">Skip tutorial</string>
+
+    // Profile strings
+
     <string name="profile_title">User Profile</string>
+
+    // FAQs strings
+
+    <string name="FAQS_title">FAQS</string>
+
 
 </resources>

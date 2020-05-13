@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".ui.news.newsFragment">
+    tools:context=".NewsFragment">
 
     <ImageView
         android:id="@+id/imageView"
+        android:text="@string/menu_news"
         android:layout_width="381dp"
         android:layout_height="163dp"
         android:src="@drawable/news1"

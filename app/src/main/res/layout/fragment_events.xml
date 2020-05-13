@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".ui.events.eventsFragment">
+    tools:context=".EventsFragment">
 
     <TextView
         android:id="@+id/text_events"
+        android:text="@string/menu_events"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

@@ -17,19 +17,13 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
-import cat.urv.deim.asm.p2.common.ui.articles.articlesFragment;
-import cat.urv.deim.asm.p2.common.ui.calendar.calendarFragment;
-import cat.urv.deim.asm.p2.common.ui.events.eventsFragment;
-import cat.urv.deim.asm.p2.common.ui.faqs.faqsFragment;
-import cat.urv.deim.asm.p2.common.ui.news.newsFragment;
-
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    static int index=0;
     static boolean fragmentTransaction = false;
     static Fragment fragment = null;
+    static int index = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,28 +68,23 @@ public class MainActivity extends AppCompatActivity {
                         switch(menuItem.getItemId()){
                             case R.id.nav_news:
                                 fragmentTransaction = true;
-                                fragment = new newsFragment();
-                                index = 0;
+                                fragment = new NewsFragment();
+                                index=0;
                                 break;
                             case R.id.nav_articles:
                                 fragmentTransaction = true;
-                                fragment = new articlesFragment();
-                                index = 1;
+                                fragment = new ArticlesFragment();
+                                index=1;
                                 break;
                             case R.id.nav_events:
                                 fragmentTransaction = true;
-                                fragment = new eventsFragment();
-                                index = 2;
+                                fragment = new EventsFragment();
+                                index=2;
                                 break;
                             case R.id.nav_calendar:
                                 fragmentTransaction = true;
-                                fragment = new calendarFragment();
-                                index = 3;
-                                break;
-                            case R.id.nav_faqs:
-                                fragmentTransaction = true;
-                                fragment = new faqsFragment();
-                                index = 4;
+                                fragment = new CalendarFragment();
+                                index=3;
                                 break;
                             case R.id.nav_profile:
 
@@ -109,6 +98,23 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
 
+                                break;
+                            case R.id.nav_faqs:
+
+                                Intent intent = new Intent(MainActivity.this, FAQSActivity.class);
+
+                                if(isAnonymous)
+                                    intent.putExtra("isAnonymous", true);
+                                else
+                                    intent.putExtra("isAnonymous", false);
+
+                                startActivity(intent);
+                                break;
+
+                            default:
+                                fragmentTransaction = true;
+                                fragment = new NewsFragment();
+                                index=0;
                                 break;
                         }
 
@@ -132,29 +138,22 @@ public class MainActivity extends AppCompatActivity {
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.getMenu().getItem(index).setChecked(true);
 
-        fragmentTransaction = false;
-        fragment = null;
-
         switch(index) {
             case 0:
                 fragmentTransaction = true;
-                fragment = new newsFragment();
+                fragment = new NewsFragment();
                 break;
             case 1:
                 fragmentTransaction = true;
-                fragment = new articlesFragment();
+                fragment = new ArticlesFragment();
                 break;
             case 2:
                 fragmentTransaction = true;
-                fragment = new eventsFragment();
+                fragment = new EventsFragment();
                 break;
             case 3:
                 fragmentTransaction = true;
-                fragment = new calendarFragment();
-                break;
-            case 4:
-                fragmentTransaction = true;
-                fragment = new faqsFragment();
+                fragment = new CalendarFragment();
                 break;
         }
 

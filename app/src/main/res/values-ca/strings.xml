@@ -22,7 +22,7 @@
     <string name="login_button_A">USUARI ANÒNIM</string>
     <string name="login_button_C">CONTINUAR ANÒNIMAMENT</string>
     <string name="email">Email</string>
-    <string name="password">Contrassenya</string>
+    <string name="password">Contrasenya</string>
     <string name="sign_in">ENTRA</string>
     <string name="try_again">REINTENTAR</string>
     <string name="UPS">UPS.. alguna cosa no ha anat bé</string>
@@ -34,6 +34,13 @@
     <string name="help_screen2">Treballa a la xarxa</string>
     <string name="help_screen3">Aprendre</string>
     <string name="skip_tutorial">Saltar tutorial</string>
+
+    // Profile strings
+
     <string name="profile_title">Perfil d\'usuari</string>
+
+    // FAQs strings
+
+    <string name="FAQS_title">FAQS</string>
 
 </resources>

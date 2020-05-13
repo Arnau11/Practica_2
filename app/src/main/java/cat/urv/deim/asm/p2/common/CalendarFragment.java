@@ -1,4 +1,4 @@
-package cat.urv.deim.asm.p2.common.ui.calendar;
+package cat.urv.deim.asm.p2.common;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,22 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import cat.urv.deim.asm.p2.common.R;
 
-public class calendarFragment extends Fragment {
+public class CalendarFragment extends Fragment {
 
-    private CalendarViewModel calendarViewModel;
+    private int index;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        calendarViewModel =
-                ViewModelProviders.of(this).get(CalendarViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_calendar, container, false);
         final TextView textView = root.findViewById(R.id.text_calendar);
-        calendarViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
+
 }

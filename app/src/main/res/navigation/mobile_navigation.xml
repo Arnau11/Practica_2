@@ -7,34 +7,27 @@
 
     <fragment
         android:id="@+id/nav_news"
-        android:name="cat.urv.deim.asm.p2.common.ui.news.newsFragment"
+        android:name="cat.urv.deim.asm.p2.common.NewsFragment"
         android:label="@string/menu_news"
         tools:layout="@layout/fragment_news">
     </fragment>
 
     <fragment
         android:id="@+id/nav_articles"
-        android:name="cat.urv.deim.asm.p2.common.ui.articles.articlesFragment"
+        android:name="cat.urv.deim.asm.p2.common.ArticlesFragment"
         android:label="@string/menu_articles"
         tools:layout="@layout/fragment_articles" />
 
     <fragment
         android:id="@+id/nav_events"
-        android:name="cat.urv.deim.asm.p2.common.ui.events.eventsFragment"
+        android:name="cat.urv.deim.asm.p2.common.EventsFragment"
         android:label="@string/menu_events"
         tools:layout="@layout/fragment_events" />
 
     <fragment
         android:id="@+id/nav_calendar"
-        android:name="cat.urv.deim.asm.p2.common.ui.calendar.calendarFragment"
+        android:name="cat.urv.deim.asm.p2.common.CalendarFragment"
         android:label="@string/menu_calendar"
         tools:layout="@layout/fragment_calendar" />
-
-    <fragment
-        android:id="@+id/nav_faqs"
-        android:name="cat.urv.deim.asm.p2.common.ui.faqs.faqsFragment"
-        android:label="@string/menu_faqs"
-        tools:layout="@layout/fragment_faqs" />
-
 
 </navigation>

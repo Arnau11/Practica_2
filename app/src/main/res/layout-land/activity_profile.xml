@@ -10,7 +10,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/app_bar_profile"
+        layout="@layout/app_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="28dp" />

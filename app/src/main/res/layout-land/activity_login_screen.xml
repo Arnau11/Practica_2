@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/app_bar_profile"
+        layout="@layout/app_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="207dp"
@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.458"
+        app:layout_constraintVertical_bias="0.500"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <EditText
@@ -80,13 +80,13 @@
 
     <Button
         android:id="@+id/anonymousButton"
-        android:layout_width="239dp"
+        android:layout_width="240dp"
         android:layout_height="47dp"
         android:text="@string/login_button_A"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.854" />
