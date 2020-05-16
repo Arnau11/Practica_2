@@ -1,4 +1,4 @@
-package cat.urv.deim.asm.p2.common;
+package cat.urv.deim.asm.p3.shared;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import cat.urv.deim.asm.p2.common.MainActivity;
+import cat.urv.deim.asm.p2.common.R;
+
 public class FAQSActivity extends AppCompatActivity {
 
     @Override
@@ -19,7 +22,7 @@ public class FAQSActivity extends AppCompatActivity {
         Window window = FAQSActivity.this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(FAQSActivity.this,R.color.colorPrimaryDark));
+        window.setStatusBarColor(ContextCompat.getColor(FAQSActivity.this, R.color.colorPrimaryDark));
 
         setContentView(R.layout.activity_faqs);
 
@@ -29,6 +32,8 @@ public class FAQSActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.FAQS_title);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
 
 
     }

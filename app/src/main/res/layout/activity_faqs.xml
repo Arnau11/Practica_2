@@ -6,7 +6,7 @@
     android:id="@+id/constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FAQSActivity" >
+    tools:context="cat.urv.deim.asm.p3.shared.FAQSActivity" >
 
     <include
         android:id="@+id/include"

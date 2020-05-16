@@ -17,6 +17,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import cat.urv.deim.asm.p3.shared.FAQSActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
