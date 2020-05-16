@@ -9,13 +9,12 @@
     android:padding="8dp"
     android:orientation="vertical"
     tools:context="cat.urv.deim.asm.p3.shared.FAQSActivity" >
-    
+
     <ExpandableListView
+        android:id="@+id/eListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/eListView"
-        android:layoutDirection="ltr"
-        />
+        android:layoutDirection="ltr" />
 
     <include
         android:id="@+id/include"

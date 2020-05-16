@@ -17,13 +17,11 @@ import cat.urv.deim.asm.p2.common.R;
 
 public class ArticlesFragment extends Fragment {
 
-
-    private int index;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
+
         View root = inflater.inflate(R.layout.fragment_articles, container, false);
-        final TextView textView = root.findViewById(R.id.text_articles);
+
         return root;
     }
 

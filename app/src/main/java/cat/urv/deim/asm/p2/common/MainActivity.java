@@ -17,6 +17,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import cat.urv.deim.asm.p3.shared.EventsFragment;
 import cat.urv.deim.asm.p3.shared.FAQSActivity;
 
 

@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/nav_events"
-        android:name="cat.urv.deim.asm.p2.common.EventsFragment"
+        android:name="cat.urv.deim.asm.p3.shared.EventsFragment"
         android:label="@string/menu_events"
         tools:layout="@layout/fragment_events" />
 

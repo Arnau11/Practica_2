@@ -43,4 +43,8 @@
 
     <string name="FAQS_title">FAQS</string>
 
+    // Event detail strings
+
+    <string name="event_detail_title">Detall de l\'event</string>
+
 </resources>

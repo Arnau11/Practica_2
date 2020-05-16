@@ -16,13 +16,10 @@ import cat.urv.deim.asm.p2.common.R;
 
 public class CalendarFragment extends Fragment {
 
-    private int index;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_calendar, container, false);
-        final TextView textView = root.findViewById(R.id.text_calendar);
 
         return root;
     }
