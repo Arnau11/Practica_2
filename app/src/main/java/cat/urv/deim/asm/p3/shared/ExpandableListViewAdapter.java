@@ -10,6 +10,8 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 
+import cat.urv.deim.asm.p2.common.R;
+
 public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
 
     private Context context;
@@ -67,7 +69,7 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
 
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater)this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView=inflater.inflate(R.layout.question_tv,null);
+            convertView=inflater.inflate(R.layout.question_list,null);
         }
 
         TextView  questionTv = convertView.findViewById(R.id.question_tv);
