@@ -7,5 +7,6 @@
     <color name="colorGray">#E0E0E0</color>
     <color name="colorTextGray">#666666</color>
     <color name="colorHighlight">#e6fbff</color>
+    <color name="colorWhite">#fff</color>
 
 </resources>
