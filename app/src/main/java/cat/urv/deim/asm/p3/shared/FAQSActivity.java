@@ -5,20 +5,32 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ExpandableListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import cat.urv.deim.asm.p2.common.MainActivity;
 import cat.urv.deim.asm.p2.common.R;
 
 public class FAQSActivity extends AppCompatActivity {
 
+    ExpandableListViewAdapter listViewAdapter;
+    ExpandableListView expandableListView;
+    List<String> questionList;
+    HashMap<String, List<String>> answerList;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_faqs);
         Window window = FAQSActivity.this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -33,9 +45,30 @@ public class FAQSActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.FAQS_title);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        expandableListView = findViewById(R.id.eListView);
+        showList();
+
+        listViewAdapter = new ExpandableListViewAdapter(this, questionList, answerList);
+        expandableListView.setAdapter(listViewAdapter);
 
 
+    }
 
+    private void showList() {
+        questionList = new ArrayList<String>();
+        answerList = new HashMap<String, List<String>>();
+
+        questionList.add("hola 1");
+        questionList.add("hola 1");
+
+        List<String> topic1 = new ArrayList<>();
+        topic1.add("wchebceclk");
+
+        List<String> topic2 = new ArrayList<>();
+        topic2.add("wchebceclk");
+
+        answerList.put(questionList.get(0), topic1);
+        answerList.put(questionList.get(1), topic2);
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
