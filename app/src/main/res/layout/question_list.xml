@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/question_tv"
         android:text="Question TextView"
+        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:textSize="38sp"
         />
 

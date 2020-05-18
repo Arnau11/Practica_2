@@ -13,8 +13,7 @@
         android:id="@+id/answer_tv"
         android:text="Answer"
         android:textSize="26sp"
-        android:paddingLeft="?android:expandableListPreferredChildIndicatorLeft"
-        android:paddingStart="?android:expandableListPreferredChildIndicatorLeft"
+        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft" />
 
 
         />
