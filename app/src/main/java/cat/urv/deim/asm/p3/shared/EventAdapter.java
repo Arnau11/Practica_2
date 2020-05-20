@@ -1,16 +1,20 @@
 package cat.urv.deim.asm.p3.shared;
 
+import android.app.LauncherActivity;
 import android.content.Context;
+import android.media.MediaDrm;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -20,23 +24,22 @@ import cat.urv.deim.asm.p2.common.R;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder>{
 
     private Context mCtx;
-    private List<Event> eventList;
-    private onItemClickListener mListener;
+    private List<EventList> eventsList;
+    private onClickEventListener mOnClickEventListener;
 
-    public interface onItemClickListener{
-        void onItemClick(int position);
+    public EventAdapter(Context mCtx, List<EventList> eventList, onClickEventListener onClickEventListener) {
+        this.mCtx = mCtx;
+        this.eventsList = eventList;
+        this.mOnClickEventListener=onClickEventListener;
     }
 
-    public void setOnItemClickListener(onItemClickListener listener){
-        mListener = listener;
-    }
+    public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public class EventViewHolder extends RecyclerView.ViewHolder{
+        public TextView textViewTitle, textViewShortDesc, textViewDate;
+        public ImageView imageView;
+        public onClickEventListener onClickEventListener;
 
-        TextView textViewTitle, textViewShortDesc, textViewDate;
-        ImageView imageView;
-
-        public EventViewHolder(View itemView) {
+        public EventViewHolder(View itemView, onClickEventListener onClickEventListener) {
             super(itemView);
 
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
@@ -44,52 +47,47 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             textViewDate= itemView.findViewById(R.id.textViewDate);
             imageView = itemView.findViewById(R.id.imageView);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (mListener != null){
-                        int position = getAdapterPosition();
+            this.onClickEventListener = onClickEventListener;
 
-                        if (position != RecyclerView.NO_POSITION)
-                            mListener.onItemClick(position);
+            itemView.setOnClickListener(this);
 
-                    }
-                }
-            });
+        }
 
+        @Override
+        public void onClick(View v) {
+            onClickEventListener.onEventClick(getAdapterPosition());
         }
     }
 
-    public EventAdapter(Context mCtx, List<Event> eventList) {
-        this.mCtx = mCtx;
-        this.eventList = eventList;
-    }
-
-    @NonNull
     @Override
     public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.layout_event, null);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.layout_event,parent,false);
 
-        return new EventViewHolder(view);
+        return new EventViewHolder(view, mOnClickEventListener);
     }
 
     @Override
-    public void onBindViewHolder(EventAdapter.EventViewHolder holder, int position) {
+    public void onBindViewHolder(EventViewHolder holder, int position) {
+        final EventList eventList = eventsList.get(position);
 
-        Event event = eventList.get(position);
+        holder.textViewTitle.setText(eventList.getTitle());
+        holder.textViewShortDesc.setText(eventList.getShortDesc());
+        holder.textViewDate.setText(eventList.getDate());
 
-        holder.textViewTitle.setText(event.getTitle());
-        holder.textViewShortDesc.setText(event.getShortDesc());
-        holder.textViewDate.setText(event.getDate());
+        Picasso.with(mCtx).load(eventList.getImageURL()).into(holder.imageView);
 
-        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(event.getImage(),null));
     }
 
     @Override
     public int getItemCount() {
-        return eventList.size();
+        return eventsList.size();
+    }
+
+    // Interface for sending the click information to the activity
+    public interface onClickEventListener{
+        void onEventClick(int position);
     }
 
 }

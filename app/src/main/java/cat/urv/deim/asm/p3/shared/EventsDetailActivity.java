@@ -29,8 +29,14 @@ public class EventsDetailActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        String titol = null;
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            titol = extras.getString("Title");
+        }
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.event_detail_title);
+        getSupportActionBar().setTitle(titol);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 

@@ -1,23 +1,19 @@
 package cat.urv.deim.asm.p3.shared;
 
-public class Event {
+import android.widget.ImageView;
+
+public class EventList {
     private int id;
     private String title;
     private String shortDesc;
     private String date;
-    private int image;
+    private String imageURL;
 
-
-    public Event(int id, String title, String shortDesc, String date, int image) {
-        this.id = id;
+    public EventList(String title, String shortDesc, String date, String imageURL) {
         this.title = title;
         this.shortDesc = shortDesc;
         this.date=date;
-        this.image = image;
-    }
-
-    public int getId() {
-        return id;
+        this.imageURL=imageURL;
     }
 
     public String getTitle() {
@@ -32,8 +28,8 @@ public class Event {
         return date;
     }
 
-    public int getImage() {
-        return image;
+    public String getImageURL() {
+        return imageURL;
     }
 
 }
