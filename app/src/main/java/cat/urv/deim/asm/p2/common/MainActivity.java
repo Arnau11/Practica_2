@@ -2,6 +2,7 @@ package cat.urv.deim.asm.p2.common;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -17,6 +18,15 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import cat.urv.deim.asm.libraries.commanagerdc.models.Article;
+import cat.urv.deim.asm.libraries.commanagerdc.models.CalendarItem;
+import cat.urv.deim.asm.libraries.commanagerdc.models.Event;
+import cat.urv.deim.asm.libraries.commanagerdc.models.Faq;
+import cat.urv.deim.asm.libraries.commanagerdc.models.New;
 import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p3.shared.EventsFragment;
 import cat.urv.deim.asm.p3.shared.FAQSActivity;
@@ -24,6 +34,7 @@ import cat.urv.deim.asm.p3.shared.FAQSActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private AppBarConfiguration mAppBarConfiguration;
     static boolean fragmentTransaction = false;
     static Fragment fragment = null;
@@ -35,15 +46,50 @@ public class MainActivity extends AppCompatActivity {
 
         final Boolean isAnonymous = getIntent().getExtras().getBoolean("isAnonymous");
 
-        if(!isAnonymous){
+        if (!isAnonymous) {
             setContentView(R.layout.activity_main);
-        }
-        else{
+        } else {
             setContentView(R.layout.activity_anonymous);
         }
 
-        DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext(),R.raw.faqs,R.raw.news,R.raw.articles,R.raw.events,R.raw.calendar);
+        DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext(), R.raw.faqs, R.raw.news, R.raw.articles, R.raw.events, R.raw.calendar);
+        DataProvider.generateMockJsonStr(this);
 
+        List<? extends List> dataLists = new LinkedList<>();
+        try {
+            Object dataArray[] = {
+                    dataProvider.getFaqs(),
+                    dataProvider.getNews(),
+                    dataProvider.getArticles(),
+                    dataProvider.getEvents(),
+                    dataProvider.getCalendar()
+            };
+
+            for (Object obj : dataArray) {
+                ArrayList<Object> list = (ArrayList<Object>) obj;
+
+                Log.d(TAG, "" + list.get(0).getClass().getSimpleName());
+
+                if (list.get(0).getClass() == Faq.class) {
+                    showFaq((Faq) list.get(0));
+                } else if (list.get(0).getClass() == New.class) {
+                    showNew((New) list.get(0));
+                } else if (list.get(0).getClass() == Article.class) {
+                    showArticle((Article) list.get(0));
+                } else if (list.get(0).getClass() == Event.class) {
+                    showEvent((Event) list.get(0));
+                } else if (list.get(0).getClass() == CalendarItem.class) {
+                    showCalendar((CalendarItem) list.get(0));
+                } else {
+                    Log.e(TAG, "Type not supported");
+                }
+
+
+            }
+
+        } catch (NullPointerException exception) {
+            Log.e(TAG, "Error accessing data");
+        }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -193,5 +239,50 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    protected void showFaq(Faq faq){
+        Log.d(TAG,"Field Body:"+faq.getBody());
+        Log.d(TAG,"Field Title:"+faq.getTitle());
+    }
+
+    protected void showArticle(Article article){
+        Log.d(TAG,"Field Author:"+article.getAuthor());
+        Log.d(TAG,"Field Date:"+article.getDate());
+        Log.d(TAG,"Field DateUpdate:"+article.getDateUpdate());
+        Log.d(TAG,"Field Title:"+article.getTitle());
+        Log.d(TAG,"Field AbstractText:"+article.getAbstractText());
+        Log.d(TAG,"Field Text:"+article.getText());
+        Log.d(TAG,"Field Tags:"+article.getTags());
+        Log.d(TAG,"Field Description:"+article.getDescription());
+        Log.d(TAG,"Field ImageURL:"+article.getImageURL());
+    }
+
+    protected void showNew(New newItem){
+        Log.d(TAG,"Field Title:"+newItem.getTitle());
+        Log.d(TAG,"Field Subtitle:"+newItem.getSubtitle());
+        Log.d(TAG,"Field Text:"+newItem.getText());
+        Log.d(TAG,"Field Date:"+newItem.getDate());
+        Log.d(TAG,"Field DateUpdate:"+newItem.getDateUpdate());
+        Log.d(TAG,"Field ImageURL:"+newItem.getImageURL());
+        Log.d(TAG,"Field Tags:"+newItem.getTags());
+    }
+
+    protected void showEvent(Event event){
+        Log.d(TAG,"Field Name:"+event.getName());
+        Log.d(TAG,"Field Description:"+event.getDescription());
+        Log.d(TAG,"Field Type:"+event.getType());
+        Log.d(TAG,"Field Tags:"+event.getTags());
+        Log.d(TAG,"Field webURL:"+event.getWebURL());
+        Log.d(TAG,"Field ImageURL:"+event.getImageURL());
+    }
+
+    protected void showCalendar(CalendarItem calendar){
+        Log.d(TAG,"Field Name:"+calendar.getName());
+        Log.d(TAG,"Field Descripció:"+calendar.getDescription());
+        Log.d(TAG,"Field Tags:"+calendar.getTags());
+        Log.d(TAG,"Field Venue:"+calendar.getVenue());
+        Log.d(TAG,"Field Date:"+calendar.getDate());
+        Log.d(TAG,"Field Hour:"+calendar.getHour());
+        Log.d(TAG,"Field ImageURL:"+calendar.getImageURL());
+    }
 
 }
