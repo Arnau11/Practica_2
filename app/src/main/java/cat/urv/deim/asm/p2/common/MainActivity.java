@@ -52,8 +52,12 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_anonymous);
         }
 
-        DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext(), R.raw.faqs, R.raw.news, R.raw.articles, R.raw.events, R.raw.calendar);
-        DataProvider.generateMockJsonStr(this);
+        DataProvider dataProvider;
+        //Load data from synthetic origin
+        dataProvider = DataProvider.getInstance(this.getApplicationContext());
+
+        //Override wrapper that's allows to load data from any resource in raw directory of the project
+        //dataProvider = DataProvider.getInstance(this.getApplicationContext(),R.raw.faqs,R.raw.news,R.raw.articles,R.raw.events,R.raw.calendar);
 
         List<? extends List> dataLists = new LinkedList<>();
         try {
