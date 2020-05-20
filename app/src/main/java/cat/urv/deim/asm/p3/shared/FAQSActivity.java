@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import cat.urv.deim.asm.libraries.commanagerdc.models.Faq;
+import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p2.common.MainActivity;
 import cat.urv.deim.asm.p2.common.R;
 
@@ -60,7 +62,9 @@ public class FAQSActivity extends AppCompatActivity {
 
         questionList.add("hola 1");
         questionList.add("hola 1");
-
+        DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext());
+        List<Faq> faqs =dataProvider.getFaqs();
+        String body= faqs.get(0).getBody();
         List<String> topic1 = new ArrayList<>();
         topic1.add("wchebceclk");
 
