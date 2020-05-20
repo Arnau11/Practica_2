@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import cat.urv.deim.asm.libraries.commanagerdc.models.Event;
 import cat.urv.deim.asm.libraries.commanagerdc.models.Faq;
 import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p2.common.MainActivity;
@@ -60,19 +61,20 @@ public class FAQSActivity extends AppCompatActivity {
         questionList = new ArrayList<String>();
         answerList = new HashMap<String, List<String>>();
 
-        questionList.add("hola 1");
-        questionList.add("hola 1");
         DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext());
-        List<Faq> faqs =dataProvider.getFaqs();
-        String body= faqs.get(0).getBody();
-        List<String> topic1 = new ArrayList<>();
-        topic1.add("wchebceclk");
+        List<Faq> faqs = dataProvider.getFaqs();
+        int i = 0;
+        while(i < faqs.size()) {
+            String title = faqs.get(i).getTitle();
+            String body = faqs.get(i).getBody();
+            questionList.add(title);
+            List<String> topic1 = new ArrayList<>();
+            topic1.add(body);
+            answerList.put(questionList.get(i), topic1);
+            i++;
+        }
 
-        List<String> topic2 = new ArrayList<>();
-        topic2.add("wchebceclk");
 
-        answerList.put(questionList.get(0), topic1);
-        answerList.put(questionList.get(1), topic2);
     }
 
     public boolean onOptionsItemSelected(MenuItem item){

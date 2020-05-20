@@ -45,44 +45,7 @@ public class EventsFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        DataProvider dataProvider = ;
 
-        try {
-            Object dataArray[] = {
-                    dataProvider.getEvents()
-            };
-
-            for (Object obj : dataArray) {
-                ArrayList<Object> list = (ArrayList<Object>) obj;
-
-                if (list.get(0).getClass() == Faq.class) {
-                    showFaq((Faq) list.get(0));
-                } else if (list.get(0).getClass() == New.class) {
-                    showNew((New) list.get(0));
-                } else if (list.get(0).getClass() == Article.class) {
-                    showArticle((Article) list.get(0));
-                } else if (list.get(0).getClass() == cat.urv.deim.asm.libraries.commanagerdc.models.Event.class) {
-                    showEvent((cat.urv.deim.asm.libraries.commanagerdc.models.Event) list.get(0));
-                } else if (list.get(0).getClass() == CalendarItem.class) {
-                    showCalendar((CalendarItem) list.get(0));
-                } else {
-                    Log.e(TAG, "Type not supported");
-                }
-
-
-            }
-
-        } catch (NullPointerException exception) {
-            Log.e(TAG, "Error accessing data");
-        }
-
-
-
-
-
-
-
-        showEvent((cat.urv.deim.asm.libraries.commanagerdc.models.Event) list.get(0));
 
 
 
