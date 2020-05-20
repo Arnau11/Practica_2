@@ -14,4 +14,58 @@
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="-121dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="58dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:text="Titol"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray"/>
+
+        <TextView
+            android:id="@+id/tags"
+            android:layout_width="match_parent"
+            android:layout_height="17dp"
+            android:layout_marginRight="15dp"
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="WTM, Conference"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="17sp"
+            android:textColor="@color/colorBlack"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

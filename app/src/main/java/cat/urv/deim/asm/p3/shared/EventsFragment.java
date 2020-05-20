@@ -56,7 +56,7 @@ public class EventsFragment extends Fragment implements EventAdapter.onClickEven
     public void onEventClick(int position) {
         eventsList.get(position);
         Intent intent = new Intent(getActivity(),EventsDetailActivity.class);
-        intent.putExtra("Title", eventsList.get(position).getTitle());
+        intent.putExtra("Position", position);
         startActivity(intent);
     }
 }
