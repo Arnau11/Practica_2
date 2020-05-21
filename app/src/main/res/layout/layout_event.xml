@@ -60,22 +60,22 @@
                 android:id="@+id/fav_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="15dp"
                 android:layout_below="@+id/imageView"
-                android:background="@drawable/custom_like_button">
-            </Button>
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/custom_like_button"
+                android:focusable="true"></Button>
 
             <Button
                 android:id="@+id/bookmark_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="40dp"
                 android:layout_below="@+id/imageView"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/fav_icon"
-                android:background="@drawable/custom_mark_button">
-            </Button>
+                android:background="@drawable/custom_mark_button"
+                android:focusable="true"></Button>
 
 
         </RelativeLayout>

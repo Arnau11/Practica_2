@@ -4,8 +4,10 @@ import android.app.LauncherActivity;
 import android.content.Context;
 import android.media.MediaDrm;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -26,6 +28,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     private Context mCtx;
     private List<EventList> eventsList;
     private onClickEventListener mOnClickEventListener;
+    public static boolean liked = false;
+    public static boolean bookMarked = false;
 
     public EventAdapter(Context mCtx, List<EventList> eventList, onClickEventListener onClickEventListener) {
         this.mCtx = mCtx;
@@ -37,7 +41,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
         public TextView textViewTitle, textViewShortDesc, textViewDate;
         public ImageView imageView;
+        public Button like, bookmark;
         public onClickEventListener onClickEventListener;
+
 
         public EventViewHolder(View itemView, onClickEventListener onClickEventListener) {
             super(itemView);
@@ -46,12 +52,27 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewDate= itemView.findViewById(R.id.textViewDate);
             imageView = itemView.findViewById(R.id.imageView);
+            like = itemView.findViewById(R.id.fav_icon);
+            bookmark = itemView.findViewById(R.id.bookmark_icon);
+
+            like.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    liked = !liked;
+                    like.setSelected(liked);
+                }});
+
+            bookmark.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    bookMarked = !bookMarked;
+                    bookmark.setSelected(bookMarked);
+                }});
+
 
             this.onClickEventListener = onClickEventListener;
 
             itemView.setOnClickListener(this);
 
-        }
+        };
 
         @Override
         public void onClick(View v) {
