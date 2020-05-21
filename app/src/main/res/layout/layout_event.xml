@@ -56,17 +56,19 @@
                 android:text="Data de l'event">
             </TextView>
 
-            <Button
+            <ToggleButton
                 android:id="@+id/fav_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_below="@+id/imageView"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"
+                android:textOff=""
+                android:textOn=""
                 android:background="@drawable/custom_like_button"
-                android:focusable="true"></Button>
+                android:focusable="true"></ToggleButton>
 
-            <Button
+            <ToggleButton
                 android:id="@+id/bookmark_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -74,8 +76,10 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/fav_icon"
+                android:textOff=""
+                android:textOn=""
                 android:background="@drawable/custom_mark_button"
-                android:focusable="true"></Button>
+                android:focusable="true"></ToggleButton>
 
 
         </RelativeLayout>

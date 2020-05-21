@@ -52,21 +52,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewDate= itemView.findViewById(R.id.textViewDate);
             imageView = itemView.findViewById(R.id.imageView);
-            like = itemView.findViewById(R.id.fav_icon);
-            bookmark = itemView.findViewById(R.id.bookmark_icon);
-
-            like.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    liked = !liked;
-                    like.setSelected(liked);
-                }});
-
-            bookmark.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    bookMarked = !bookMarked;
-                    bookmark.setSelected(bookMarked);
-                }});
-
 
             this.onClickEventListener = onClickEventListener;
 
