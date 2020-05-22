@@ -28,8 +28,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     private Context mCtx;
     private List<EventList> eventsList;
     private onClickEventListener mOnClickEventListener;
-    public static boolean liked = false;
-    public static boolean bookMarked = false;
 
     public EventAdapter(Context mCtx, List<EventList> eventList, onClickEventListener onClickEventListener) {
         this.mCtx = mCtx;
@@ -41,7 +39,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
         public TextView textViewTitle, textViewShortDesc, textViewDate;
         public ImageView imageView;
-        public Button like, bookmark;
         public onClickEventListener onClickEventListener;
 
 
@@ -82,7 +79,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         holder.textViewShortDesc.setText(eventList.getShortDesc());
         holder.textViewDate.setText(eventList.getDate());
 
-        Picasso.with(mCtx).load(eventList.getImageURL()).into(holder.imageView);
+        Picasso.width(mCtx).load(eventList.getImageURL()).into(holder.imageView);
 
     }
 
