@@ -1,60 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/colorLightGray">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        app:cardElevation="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="12dp">
+            android:padding="15dp">
 
             <ImageView
                 android:id="@id/imageView"
-                android:layout_width="133dp"
-                android:layout_height="91dp"
-                android:layout_alignParentRight="true"></ImageView>
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/ic_launcher_round"
+                android:scaleType="centerCrop">
+            </ImageView>
 
             <TextView
                 android:id="@+id/textViewTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:textSize="25sp"
+                android:layout_toLeftOf="@id/imageView"
+                android:gravity="left"
+                android:text="Títol"
                 android:textColor="@color/colorBlack"
-                android:text="Títol">
-            </TextView>
+                android:textSize="20sp"></TextView>
 
             <TextView
                 android:id="@+id/textViewShortDesc"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textViewTitle"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="15sp"
+                android:layout_toLeftOf="@id/imageView"
+                android:layout_marginTop="9dp"
+                android:gravity="left"
+                android:text="Descripció de l'event"
                 android:textColor="@color/colorTextGray"
-                android:text="Descripció de l'event">
-            </TextView>
-
-            <TextView
-                android:id="@+id/textViewDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imageView"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_alignParentRight="true"
-                android:text="Data de l'event">
-            </TextView>
+                android:textSize="15sp"></TextView>
 
             <ToggleButton
                 android:id="@+id/fav_icon"
@@ -62,24 +54,35 @@
                 android:layout_height="30dp"
                 android:layout_below="@+id/imageView"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:textOff=""
-                android:textOn=""
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/custom_like_button"
-                android:focusable="true"></ToggleButton>
+                android:focusable="true"
+                android:textOff=""
+                android:textOn=""></ToggleButton>
 
             <ToggleButton
                 android:id="@+id/bookmark_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_below="@+id/imageView"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
                 android:layout_toRightOf="@+id/fav_icon"
-                android:textOff=""
-                android:textOn=""
                 android:background="@drawable/custom_mark_button"
-                android:focusable="true"></ToggleButton>
+                android:focusable="true"
+                android:textOff=""
+                android:textOn=""></ToggleButton>
+
+            <TextView
+                android:id="@+id/textViewTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_toRightOf="@+id/bookmark_icon"
+                android:layout_marginTop="20dp"
+                android:gravity="right"
+                android:text="WTM, Conference"></TextView>
 
 
         </RelativeLayout>

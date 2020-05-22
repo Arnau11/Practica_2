@@ -46,5 +46,7 @@
     // Event detail strings
 
     <string name="event_detail_title">Detall de l\'event</string>
+    <string name="web_page">Pàgina Web:</string>
+
 
 </resources>

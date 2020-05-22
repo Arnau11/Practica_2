@@ -5,6 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorButton">#00BCD4</color>
     <color name="colorGray">#E0E0E0</color>
+    <color name="colorLightGray">#F6F6F6</color>
     <color name="colorTextGray">#666666</color>
     <color name="colorHighlight">#e6fbff</color>
     <color name="colorWhite">#fff</color>

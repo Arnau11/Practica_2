@@ -27,6 +27,7 @@ import cat.urv.deim.asm.libraries.commanagerdc.models.CalendarItem;
 import cat.urv.deim.asm.libraries.commanagerdc.models.Event;
 import cat.urv.deim.asm.libraries.commanagerdc.models.Faq;
 import cat.urv.deim.asm.libraries.commanagerdc.models.New;
+import cat.urv.deim.asm.libraries.commanagerdc.models.Tag;
 import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p3.shared.EventsFragment;
 import cat.urv.deim.asm.p3.shared.FAQSActivity;
@@ -182,8 +183,102 @@ public class MainActivity extends AppCompatActivity {
 
         drawer.closeDrawers();
 
+        DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext(),R.raw.faqs,R.raw.news,R.raw.articles,R.raw.events,R.raw.calendar);
+
+        List<? extends List> dataLists = new LinkedList<>();
+        try {
+            Object dataArray[]= {
+                    dataProvider.getFaqs(),
+                    dataProvider.getNews(),
+                    dataProvider.getArticles(),
+                    dataProvider.getEvents(),
+                    dataProvider.getCalendar()
+            };
+
+            for (Object obj:dataArray){
+                ArrayList<Object> list = (ArrayList<Object>) obj;
+
+                Log.d(TAG,""+list.get(0).getClass().getSimpleName());
+
+                if (list.get(0).getClass() == Faq.class){
+                    showFaq((Faq) list.get(0));
+                }else if(list.get(0).getClass() == New.class){
+                    showNew((New) list.get(0));
+                }else if(list.get(0).getClass() == Article.class){
+                    showArticle((Article)list.get(0));
+                }else if(list.get(0).getClass() == Event.class){
+                    showEvent((Event) list.get(0));
+                }else if(list.get(0).getClass() == CalendarItem.class){
+                    showCalendar((CalendarItem) list.get(0));
+                }else{
+                    Log.e(TAG,"Type not supported");
+                }
+            }
+
+        }
+        catch (NullPointerException exception){
+            Log.e(TAG,"Error accessing data");
+        }
+
     }
 
+    protected void showFaq(Faq faq){
+        Log.d(TAG,"Field Body:"+faq.getBody());
+        Log.d(TAG,"Field Title:"+faq.getTitle());
+    }
+
+    protected void showArticle(Article article){
+        Log.d(TAG,"Field Author:"+article.getAuthor());
+        Log.d(TAG,"Field Date:"+article.getDate());
+        Log.d(TAG,"Field DateUpdate:"+article.getDateUpdate());
+        Log.d(TAG,"Field Title:"+article.getTitle());
+        Log.d(TAG,"Field AbstractText:"+article.getAbstractText());
+        Log.d(TAG,"Field Text:"+article.getText());
+        Log.d(TAG,"Field Description:"+article.getDescription());
+        Log.d(TAG,"Field ImageURL:"+article.getImageURL());
+        Log.d(TAG,"Field Tags:");
+        for (Tag tag:article.getTags()){
+            Log.d(TAG,"Field Tags:"+tag.getName());
+        }
+    }
+
+    protected void showNew(New newItem){
+        Log.d(TAG,"Field Title:"+newItem.getTitle());
+        Log.d(TAG,"Field Subtitle:"+newItem.getSubtitle());
+        Log.d(TAG,"Field Text:"+newItem.getText());
+        Log.d(TAG,"Field Date:"+newItem.getDate());
+        Log.d(TAG,"Field DateUpdate:"+newItem.getDateUpdate());
+        Log.d(TAG,"Field ImageURL:"+newItem.getImageURL());
+        Log.d(TAG,"Field Tags:");
+        for (Tag tag:newItem.getTags()){
+            Log.d(TAG,"Field Tags:"+tag.getName());
+        }
+    }
+
+    protected void showEvent(Event event){
+        Log.d(TAG,"Field Name:"+event.getName());
+        Log.d(TAG,"Field Description:"+event.getDescription());
+        Log.d(TAG,"Field Type:"+event.getType());
+        Log.d(TAG,"Field webURL:"+event.getWebURL());
+        Log.d(TAG,"Field ImageURL:"+event.getImageURL());
+        Log.d(TAG,"Field Tags:");
+        for (Tag tag:event.getTags()){
+            Log.d(TAG,"Field Tags:"+tag.getName());
+        }
+    }
+
+    protected void showCalendar(CalendarItem calendar){
+        Log.d(TAG,"Field Name:"+calendar.getName());
+        Log.d(TAG,"Field Descripció:"+calendar.getDescription());
+        Log.d(TAG,"Field Venue:"+calendar.getVenue());
+        Log.d(TAG,"Field Date:"+calendar.getDate());
+        Log.d(TAG,"Field Hour:"+calendar.getHour());
+        Log.d(TAG,"Field ImageURL:"+calendar.getImageURL());
+        Log.d(TAG,"Field Tags:");
+        for (Tag tag:calendar.getTags()){
+            Log.d(TAG,"Field Tags:"+tag.getName());
+        }
+    }
 
     @Override
     public boolean onSupportNavigateUp() {
