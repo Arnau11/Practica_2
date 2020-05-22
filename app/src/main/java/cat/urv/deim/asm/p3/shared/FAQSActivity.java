@@ -61,7 +61,7 @@ public class FAQSActivity extends AppCompatActivity {
         questionList = new ArrayList<String>();
         answerList = new HashMap<String, List<String>>();
 
-        DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext());
+        DataProvider dataProvider = DataProvider.getInstance(this);
         List<Faq> faqs = dataProvider.getFaqs();
         int i = 0;
         while(i < faqs.size()) {

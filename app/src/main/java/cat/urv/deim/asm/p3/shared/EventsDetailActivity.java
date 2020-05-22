@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cat.urv.deim.asm.libraries.commanagerdc.models.Event;
+import cat.urv.deim.asm.libraries.commanagerdc.models.Tag;
 import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p2.common.MainActivity;
 import cat.urv.deim.asm.p2.common.R;
@@ -45,25 +46,47 @@ public class EventsDetailActivity extends AppCompatActivity {
             position = extras.getInt("Position");
         }
 
-        DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext());
+        DataProvider dataProvider = DataProvider.getInstance(this);
         List<Event> event = dataProvider.getEvents();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.event_detail_title);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        TextView shortDesc = this.findViewById(R.id.text);
-        shortDesc.setText(event.get(position).getDescription());
+        TextView name = this.findViewById(R.id.name);
+        name.setText(event.get(position).getName());
+
+        String tags = "";
+
+        for (Tag tag:event.get(position).getTags()){
+            tags=tags+", "+tag.getName();
+        }
+        tags=tags.substring(1,tags.length());
+
+        TextView tag = this.findViewById(R.id.tags);
+        tag.setText(tags);
+
+        TextView description = this.findViewById(R.id.description);
+        description.setText(event.get(position).getDescription());
 
         ImageView imageView = this.findViewById(R.id.imageView);
         Picasso.with(this).load(event.get(position).getImageURL()).into(imageView);
 
+        TextView link = this.findViewById(R.id.link);
+        link.setText(event.get(position).getWebURL());
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
+        final Boolean isAnonymous = getIntent().getExtras().getBoolean("isAnonymous");
         Intent intent = new Intent(EventsDetailActivity.this, MainActivity.class);
-        intent.putExtra("isAnonymous", false);
+        if (isAnonymous)
+            intent.putExtra("isAnonymous", true);
+        else
+            intent.putExtra("isAnonymous", false);
+
         startActivityForResult(intent, 0);
+
         return true;
     }
 }

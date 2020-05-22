@@ -2,9 +2,11 @@ package cat.urv.deim.asm.p3.shared;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cat.urv.deim.asm.libraries.commanagerdc.models.Event;
+import cat.urv.deim.asm.libraries.commanagerdc.models.Tag;
 import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p2.common.R;
 
@@ -34,13 +37,21 @@ public class EventsFragment extends Fragment implements EventAdapter.onClickEven
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        DataProvider dataProvider = DataProvider.getInstance(this.getActivity().getApplicationContext());
+        DataProvider dataProvider = DataProvider.getInstance(getActivity());
         List<Event> event = dataProvider.getEvents();
 
         eventsList = new ArrayList<>();
 
+        String tags = "";
+
         for (int i = 0; i<event.size(); i++){
-            EventList eventList = new EventList(event.get(i).getName(), event.get(i).getDescription(), "Data "+i, event.get(i).getImageURL());
+            tags = "";
+
+            for (Tag tag:event.get(i).getTags()){
+                tags=tags+", "+tag.getName();
+            }
+            tags=tags.substring(1,tags.length());
+            EventList eventList = new EventList(event.get(i).getName(), tags, event.get(i).getImageURL());
             eventsList.add(eventList);
         }
 

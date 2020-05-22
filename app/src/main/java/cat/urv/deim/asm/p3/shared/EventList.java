@@ -3,33 +3,51 @@ package cat.urv.deim.asm.p3.shared;
 import android.widget.ImageView;
 
 public class EventList {
-    private int id;
-    private String title;
-    private String shortDesc;
-    private String date;
+    private String name;
+    private String description;
     private String imageURL;
+    private String type;
+    private String webURL;
+    private String tags;
 
-    public EventList(String title, String shortDesc, String date, String imageURL) {
-        this.title = title;
-        this.shortDesc = shortDesc;
-        this.date=date;
+    public EventList(String name, String description, String tags, String imageURL) {
+        this.name = name;
+        this.description = description;
+        this.type=type;
+        this.webURL=webURL;
+        this.imageURL=imageURL;
+        this.tags = tags;
+    }
+
+    public EventList(String name, String tags, String imageURL) {
+        this.name = name;
+        this.tags = tags;
         this.imageURL=imageURL;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public String getShortDesc() {
-        return shortDesc;
-    }
-
-    public String getDate() {
-        return date;
+    public String getDescription() {
+        return description;
     }
 
     public String getImageURL() {
         return imageURL;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getWebURL() {
+        return webURL;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
 
 }

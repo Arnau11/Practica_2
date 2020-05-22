@@ -37,7 +37,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView textViewTitle, textViewShortDesc, textViewDate;
+        public TextView textViewTitle, textViewTags;
         public ImageView imageView;
         public onClickEventListener onClickEventListener;
 
@@ -46,8 +46,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             super(itemView);
 
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
-            textViewDate= itemView.findViewById(R.id.textViewDate);
+            textViewTags = itemView.findViewById(R.id.textViewTags);
             imageView = itemView.findViewById(R.id.imageView);
 
             this.onClickEventListener = onClickEventListener;
@@ -75,9 +74,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     public void onBindViewHolder(EventViewHolder holder, int position) {
         final EventList eventList = eventsList.get(position);
 
-        holder.textViewTitle.setText(eventList.getTitle());
-        holder.textViewShortDesc.setText(eventList.getShortDesc());
-        holder.textViewDate.setText(eventList.getDate());
+        holder.textViewTitle.setText(eventList.getName());
+        holder.textViewTags.setText(eventList.getTags());
 
         Picasso.width(mCtx).load(eventList.getImageURL()).into(holder.imageView);
 
