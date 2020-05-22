@@ -8,12 +8,13 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/question_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/question_tv"
+        android:layout_margin="8dp"
+        android:paddingLeft="10dp"
         android:text="Question TextView"
-        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
-        android:textSize="20sp"
-        />
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

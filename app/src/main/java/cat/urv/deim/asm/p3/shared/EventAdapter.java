@@ -77,7 +77,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         holder.textViewTitle.setText(eventList.getName());
         holder.textViewTags.setText(eventList.getTags());
 
-        Picasso.width(mCtx).load(eventList.getImageURL()).into(holder.imageView);
+        Picasso.with(mCtx).load(eventList.getImageURL()).into(holder.imageView);
 
     }
 
