@@ -1,43 +1,36 @@
 package cat.urv.deim.asm.p3.shared;
 
-import android.app.LauncherActivity;
 import android.content.Context;
-import android.media.MediaDrm;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
-
+import cat.urv.deim.asm.libraries.commanagerdc.models.Event;
+import cat.urv.deim.asm.libraries.commanagerdc.models.Tag;
 import cat.urv.deim.asm.p2.common.R;
+
 
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder>{
 
     private Context mCtx;
-    private List<EventList> eventsList;
+    private List<Event> eventList;
     private onClickEventListener mOnClickEventListener;
 
-    public EventAdapter(Context mCtx, List<EventList> eventList, onClickEventListener onClickEventListener) {
+    public EventAdapter(Context mCtx, List<Event> eventList, onClickEventListener onClickEventListener) {
         this.mCtx = mCtx;
-        this.eventsList = eventList;
+        this.eventList = eventList;
         this.mOnClickEventListener=onClickEventListener;
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView textViewTitle, textViewTags;
+        public TextView textViewTitle, textViewDescription, textViewTags;
         public ImageView imageView;
         public onClickEventListener onClickEventListener;
 
@@ -46,6 +39,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             super(itemView);
 
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
+            textViewDescription = itemView.findViewById(R.id.textViewShortDesc);
             textViewTags = itemView.findViewById(R.id.textViewTags);
             imageView = itemView.findViewById(R.id.imageView);
 
@@ -72,18 +66,20 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     @Override
     public void onBindViewHolder(EventViewHolder holder, int position) {
-        final EventList eventList = eventsList.get(position);
 
-        holder.textViewTitle.setText(eventList.getName());
-        holder.textViewTags.setText(eventList.getTags());
+        holder.textViewTitle.setText(eventList.get(position).getName());
+        holder.textViewDescription.setText(eventList.get(position).getDescription());
 
-        Picasso.with(mCtx).load(eventList.getImageURL()).into(holder.imageView);
+        // getTags: method created in the class Global
+        holder.textViewTags.setText(Global.getTags(eventList, position));
+
+        Picasso.with(mCtx).load(eventList.get(position).getImageURL()).into(holder.imageView);
 
     }
 
     @Override
     public int getItemCount() {
-        return eventsList.size();
+        return eventList.size();
     }
 
     // Interface for sending the click information to the activity

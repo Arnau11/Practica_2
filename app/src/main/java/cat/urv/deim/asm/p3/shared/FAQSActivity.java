@@ -78,13 +78,9 @@ public class FAQSActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        final Boolean isAnonymous = getIntent().getExtras().getBoolean("isAnonymous");
+        final Boolean isAnonymous = getIntent().getExtras().getBoolean(Global.IS_ANONYMOUS);
         Intent intent = new Intent(FAQSActivity.this, MainActivity.class);
-
-        if (isAnonymous)
-            intent.putExtra("isAnonymous", true);
-        else
-            intent.putExtra("isAnonymous", false);
+        intent.putExtra(Global.IS_ANONYMOUS, isAnonymous);
 
         startActivityForResult(intent, 0);
         return true;

@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
+import cat.urv.deim.asm.p3.shared.Global;
+
 public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +19,13 @@ public class SplashScreen extends AppCompatActivity {
         //Obtenemos el valor del flag tutorial
         SharedPreferences prefs = this.getPreferences(Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = prefs.edit();
-        final boolean needTutorial= prefs.getBoolean("NEED_TUTORIAL", true);
+        final boolean needTutorial= prefs.getBoolean(Global.NEED_TUTORIAL, true);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 if(needTutorial){
-                    editor.putBoolean("NEED_TUTORIAL", false);
+                    editor.putBoolean(Global.NEED_TUTORIAL, false);
                     editor.commit();
                     Intent intent = new Intent(SplashScreen.this, HelpScreen1.class);
                     startActivity(intent);

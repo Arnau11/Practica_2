@@ -14,6 +14,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import cat.urv.deim.asm.p3.shared.Global;
+
 public class LoginScreen extends AppCompatActivity {
 
 
@@ -59,9 +61,9 @@ public class LoginScreen extends AppCompatActivity {
 
                 if(isUser(usersEmail, usersPassword)) {
                     Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-                    intent.putExtra("email",usersEmail);
-                    intent.putExtra("pass",usersPassword);
-                    intent.putExtra("isAnonymous", false);
+                    intent.putExtra(Global.EMAIL,usersEmail);
+                    intent.putExtra(Global.PASSWORD,usersPassword);
+                    intent.putExtra(Global.IS_ANONYMOUS, false);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(LoginScreen.this, ErrorScreen.class);
@@ -75,7 +77,7 @@ public class LoginScreen extends AppCompatActivity {
         anonymousButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-                intent.putExtra("isAnonymous", true);
+                intent.putExtra(Global.IS_ANONYMOUS, true);
                 startActivity(intent);
             }
         });
@@ -83,14 +85,14 @@ public class LoginScreen extends AppCompatActivity {
     }
 
     public boolean isUser(String email, String pass) {
-        if(email.equals("sandra.adams@email.com") && pass.equals("123456")) {
+        if(email.equals(Global.CORRECT_EMAIL) && pass.equals(Global.CORRECT_PASSWORD)) {
             return true;
         } else return false;
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
         Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-        intent.putExtra("isAnonymous", true);
+        intent.putExtra(Global.IS_ANONYMOUS, true);
         startActivityForResult(intent, 0);
         return true;
     }

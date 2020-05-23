@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import cat.urv.deim.asm.p3.shared.Global;
+
 public class ProfileActivity extends AppCompatActivity {
 
     @Override
@@ -33,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item){
         Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
-        intent.putExtra("isAnonymous", false);
+        intent.putExtra(Global.IS_ANONYMOUS, false);
         startActivityForResult(intent, 0);
         return true;
     }

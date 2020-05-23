@@ -31,6 +31,7 @@ import cat.urv.deim.asm.libraries.commanagerdc.models.Tag;
 import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p3.shared.EventsFragment;
 import cat.urv.deim.asm.p3.shared.FAQSActivity;
+import cat.urv.deim.asm.p3.shared.Global;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final Boolean isAnonymous = getIntent().getExtras().getBoolean("isAnonymous");
+        final Boolean isAnonymous = getIntent().getExtras().getBoolean(Global.IS_ANONYMOUS);
 
         if (!isAnonymous) {
             setContentView(R.layout.activity_main);
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 } else {
                                     Intent intent = new Intent(MainActivity.this, LoginScreen.class);
-                                    intent.putExtra("fromMenu", true);
+                                    intent.putExtra(Global.FROM_MENU, true);
                                     startActivity(intent);
                                 }
 
@@ -116,12 +117,7 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.nav_faqs:
 
                                 Intent intent = new Intent(MainActivity.this, FAQSActivity.class);
-
-                                if (isAnonymous)
-                                    intent.putExtra("isAnonymous", true);
-                                else
-                                    intent.putExtra("isAnonymous", false);
-
+                                intent.putExtra(Global.IS_ANONYMOUS, isAnonymous);
                                 startActivity(intent);
                                 break;
 

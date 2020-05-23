@@ -25,7 +25,6 @@ import cat.urv.deim.asm.p2.common.R;
 
 public class EventsDetailActivity extends AppCompatActivity {
 
-    private List<EventList> eventsList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,48 +42,38 @@ public class EventsDetailActivity extends AppCompatActivity {
         int position = 0;
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            position = extras.getInt("Position");
+            position = extras.getInt(Global.POSITION);
         }
 
         DataProvider dataProvider = DataProvider.getInstance(this);
-        List<Event> event = dataProvider.getEvents();
+        List<Event> eventList = dataProvider.getEvents();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.event_detail_title);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         TextView name = this.findViewById(R.id.name);
-        name.setText(event.get(position).getName());
-
-        String tags = "";
-
-        for (Tag tag:event.get(position).getTags()){
-            tags=tags+", "+tag.getName();
-        }
-        tags=tags.substring(1,tags.length());
+        name.setText(eventList.get(position).getName());
 
         TextView tag = this.findViewById(R.id.tags);
-        tag.setText(tags);
+        // getTags: method created in the class Global
+        tag.setText(Global.getTags(eventList, position));
 
         TextView description = this.findViewById(R.id.description);
-        description.setText(event.get(position).getDescription());
+        description.setText(eventList.get(position).getDescription());
 
         ImageView imageView = this.findViewById(R.id.imageView);
-        Picasso.with(this).load(event.get(position).getImageURL()).into(imageView);
+        Picasso.with(this).load(eventList.get(position).getImageURL()).into(imageView);
 
         TextView link = this.findViewById(R.id.link);
-        link.setText(event.get(position).getWebURL());
+        link.setText(eventList.get(position).getWebURL());
 
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        final Boolean isAnonymous = getIntent().getExtras().getBoolean("isAnonymous");
+        Boolean isAnonymous = getIntent().getExtras().getBoolean(Global.IS_ANONYMOUS);
         Intent intent = new Intent(EventsDetailActivity.this, MainActivity.class);
-        if (isAnonymous)
-            intent.putExtra("isAnonymous", true);
-        else
-            intent.putExtra("isAnonymous", false);
-
+        intent.putExtra(Global.IS_ANONYMOUS, isAnonymous);
         startActivityForResult(intent, 0);
 
         return true;
