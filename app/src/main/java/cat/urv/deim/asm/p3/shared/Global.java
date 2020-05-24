@@ -16,14 +16,18 @@ public class Global {
     public static final String POSITION = "position";
 
     public static String getTags(List<Event> e, int pos){
-        String tags = "";
+
+        StringBuilder tags = new StringBuilder("");
 
         for (Tag tag:e.get(pos).getTags()){
-            tags=tags+", "+tag.getName();
+            tags.append(tag.getName());
+            tags.append(", ");
         }
-        tags=tags.substring(1,tags.length());
 
-        return tags;
+        String tag = tags.toString();
+        tag = tag.substring(0,tag.length()-2);
+
+        return tag;
     }
 
 
