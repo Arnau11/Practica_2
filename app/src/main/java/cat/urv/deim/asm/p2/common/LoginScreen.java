@@ -5,14 +5,19 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.prefs.Preferences;
 
 import cat.urv.deim.asm.p3.shared.Global;
 
@@ -22,6 +27,10 @@ public class LoginScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences.Editor editor = prefs.edit();
+
 
         Window window = LoginScreen.this.getWindow();
 
@@ -64,6 +73,8 @@ public class LoginScreen extends AppCompatActivity {
                     intent.putExtra(Global.EMAIL,usersEmail);
                     intent.putExtra(Global.PASSWORD,usersPassword);
                     intent.putExtra(Global.IS_ANONYMOUS, false);
+                    editor.putBoolean(Global.IS_ANONYMOUS, false);
+                    editor.apply();
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(LoginScreen.this, ErrorScreen.class);
@@ -78,6 +89,8 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginScreen.this, MainActivity.class);
                 intent.putExtra(Global.IS_ANONYMOUS, true);
+                editor.putBoolean(Global.IS_ANONYMOUS, true);
+                editor.apply();
                 startActivity(intent);
             }
         });

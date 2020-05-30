@@ -15,6 +15,7 @@ public class Global {
     public static final String PASSWORD = "password";
     public static final String POSITION = "position";
 
+
     public static String getTags(List<Event> e, int pos){
 
         StringBuilder tags = new StringBuilder("");

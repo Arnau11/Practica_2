@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 
 import cat.urv.deim.asm.p3.shared.Global;
 
@@ -17,9 +18,10 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         //Obtenemos el valor del flag tutorial
-        SharedPreferences prefs = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         final SharedPreferences.Editor editor = prefs.edit();
         final boolean needTutorial= prefs.getBoolean(Global.NEED_TUTORIAL, true);
+        final boolean isAnonymous = prefs.getBoolean(Global.IS_ANONYMOUS, true);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -31,7 +33,7 @@ public class SplashScreen extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else{
-                    Intent intent = new Intent(SplashScreen.this, LoginScreen.class);
+                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }

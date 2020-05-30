@@ -1,7 +1,10 @@
 package cat.urv.deim.asm.p2.common;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final Boolean isAnonymous = getIntent().getExtras().getBoolean(Global.IS_ANONYMOUS);
+        //final Boolean isAnonymous = getIntent().getExtras().getBoolean(Global.IS_ANONYMOUS);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences.Editor editor = prefs.edit();
+        final boolean isAnonymous = prefs.getBoolean(Global.IS_ANONYMOUS, true);
+
 
         if (!isAnonymous) {
             setContentView(R.layout.activity_main);
