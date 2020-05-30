@@ -19,8 +19,7 @@
         android:id="@+id/eListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:indicatorRight="700dp"
+        android:indicatorRight="705dp"
         android:layoutDirection="ltr"
         android:padding="8dp" />
 

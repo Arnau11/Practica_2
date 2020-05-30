@@ -10,5 +10,6 @@
     <color name="colorHighlight">#e6fbff</color>
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000000</color>
+    <color name="color_profile_background">#f9a9ac</color>
 
 </resources>

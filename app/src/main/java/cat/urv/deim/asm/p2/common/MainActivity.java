@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-        // The communication between fragments it is done via xml (mobile_navigation)
+        // The communication between fragments it is done via xml (mobile_navigation.xml)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

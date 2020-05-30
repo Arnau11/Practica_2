@@ -4,16 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/colorWhite"
     tools:context=".LoginScreen">
 
     <include
         android:id="@+id/include"
         layout="@layout/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="-28dp" />
+        android:layout_height="match_parent" />
 
     <ImageView
         android:id="@+id/imageView5"
