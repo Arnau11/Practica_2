@@ -39,6 +39,8 @@
     // Profile strings
 
     <string name="profile_title">User profile</string>
+    <string name="email_profile">sandra.adams@email.com</string>
+    <string name="user_name">Sandra Adams</string>
 
     // FAQs strings
 

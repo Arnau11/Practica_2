@@ -21,11 +21,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     private Context mCtx;
     private List<Event> eventList;
     private onClickEventListener mOnClickEventListener;
+    private boolean isAnonymous;
 
-    public EventAdapter(Context mCtx, List<Event> eventList, onClickEventListener onClickEventListener) {
+    public EventAdapter(Context mCtx, List<Event> eventList, onClickEventListener onClickEventListener, Boolean isAnonymous) {
         this.mCtx = mCtx;
         this.eventList = eventList;
         this.mOnClickEventListener=onClickEventListener;
+        this.isAnonymous = isAnonymous;
     }
 
     public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -59,6 +61,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
+
         View view = inflater.inflate(R.layout.layout_event,parent,false);
 
         return new EventViewHolder(view, mOnClickEventListener);

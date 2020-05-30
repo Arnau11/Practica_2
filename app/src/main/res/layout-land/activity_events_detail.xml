@@ -59,7 +59,7 @@
                 android:gravity="right"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="WTM, Conference"
+                android:text="tags"
                 android:textSize="15sp" />
 
             <TextView
@@ -69,7 +69,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="30dp"
-                android:scrollbars="vertical"
                 android:text="Descripció"
                 android:textColor="@color/colorBlack"
                 android:textSize="17sp" />

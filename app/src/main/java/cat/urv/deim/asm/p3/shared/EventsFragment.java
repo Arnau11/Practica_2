@@ -34,7 +34,9 @@ public class EventsFragment extends Fragment implements EventAdapter.onClickEven
         DataProvider dataProvider = DataProvider.getInstance(getActivity());
         eventList = dataProvider.getEvents();
 
-        mAdapter = new EventAdapter(getActivity(),eventList, this);
+        Boolean isAnonymous = getActivity().getIntent().getExtras().getBoolean(Global.IS_ANONYMOUS);
+
+        mAdapter = new EventAdapter(getActivity(),eventList, this, isAnonymous);
 
         recyclerView.setAdapter(mAdapter);
 
