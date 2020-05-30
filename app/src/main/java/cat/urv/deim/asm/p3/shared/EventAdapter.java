@@ -61,10 +61,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view;
 
-
-        View view = inflater.inflate(R.layout.layout_event,parent,false);
-
+        if(isAnonymous){
+            view = inflater.inflate(R.layout.layout_event_anonymous,parent,false);
+        }
+        else{
+            view = inflater.inflate(R.layout.layout_event,parent,false);
+        }
         return new EventViewHolder(view, mOnClickEventListener);
     }
 
