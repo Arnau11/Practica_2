@@ -11,5 +11,8 @@
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000000</color>
     <color name="color_profile_background">#f9a9ac</color>
+    <color name="progress_color">#673AB7</color>
+    <color name="background_white">#00FFFFFF</color>
+
 
 </resources>

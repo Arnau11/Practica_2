@@ -41,7 +41,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
-                android:textSize="25sp"
+                android:textSize="@dimen/title_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"/>
@@ -60,7 +60,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:text="tags"
-                android:textSize="15sp" />
+                android:textSize="@dimen/text_size" />
 
             <TextView
                 android:id="@+id/description"
@@ -71,7 +71,7 @@
                 android:layout_marginBottom="30dp"
                 android:text="Descripció"
                 android:textColor="@color/colorBlack"
-                android:textSize="17sp" />
+                android:textSize="@dimen/text_size_2" />
 
             <View
                 android:layout_width="match_parent"
@@ -89,7 +89,7 @@
                     android:layout_height="match_parent"
                     android:text="@string/web_page"
                     android:textColor="@color/colorBlack"
-                    android:textSize="17sp" />
+                    android:textSize="@dimen/text_size_2" />
 
                 <TextView
                     android:id="@+id/link"
@@ -100,7 +100,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="link"
                     android:textColor="@color/colorBlack"
-                    android:textSize="17sp" />
+                    android:textSize="@dimen/text_size_2" />
 
             </RelativeLayout>
 

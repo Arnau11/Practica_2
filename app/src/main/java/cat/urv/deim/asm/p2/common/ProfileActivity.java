@@ -35,8 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item){
         Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
-        intent.putExtra(Global.IS_ANONYMOUS, false);
-        startActivityForResult(intent, 0);
+        startActivity(intent);
         return true;
     }
 }

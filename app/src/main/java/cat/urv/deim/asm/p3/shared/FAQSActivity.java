@@ -2,6 +2,7 @@ package cat.urv.deim.asm.p3.shared;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import cat.urv.deim.asm.libraries.commanagerdc.models.Event;
 import cat.urv.deim.asm.libraries.commanagerdc.models.Faq;
 import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p2.common.MainActivity;
@@ -24,6 +24,7 @@ import cat.urv.deim.asm.p2.common.R;
 public class FAQSActivity extends AppCompatActivity {
 
     ExpandableListViewAdapter listViewAdapter;
+    private static final String TAG = MainActivity.class.getSimpleName();
     ExpandableListView expandableListView;
     List<String> questionList;
     HashMap<String, List<String>> answerList;
@@ -60,28 +61,29 @@ public class FAQSActivity extends AppCompatActivity {
         questionList = new ArrayList<String>();
         answerList = new HashMap<String, List<String>>();
 
-        DataProvider dataProvider = DataProvider.getInstance(this);
-        List<Faq> faqs = dataProvider.getFaqs();
-        int i = 0;
-        while(i < faqs.size()) {
-            String title = faqs.get(i).getTitle();
-            String body = faqs.get(i).getBody();
-            questionList.add(title);
-            List<String> topic1 = new ArrayList<>();
-            topic1.add(body);
-            answerList.put(questionList.get(i), topic1);
-            i++;
+        try{
+            DataProvider dataProvider = DataProvider.getInstance(this);
+            List<Faq> faqs = dataProvider.getFaqs();
+            int i = 0;
+            while(i < faqs.size()) {
+                String title = faqs.get(i).getTitle();
+                String body = faqs.get(i).getBody();
+                questionList.add(title);
+                List<String> topic1 = new ArrayList<>();
+                topic1.add(body);
+                answerList.put(questionList.get(i), topic1);
+                i++;
+            }
         }
-
+        catch (NullPointerException exception){
+            Log.e(TAG,"Error accessing data");
+        }
 
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        final Boolean isAnonymous = getIntent().getExtras().getBoolean(Global.IS_ANONYMOUS);
         Intent intent = new Intent(FAQSActivity.this, MainActivity.class);
-        intent.putExtra(Global.IS_ANONYMOUS, isAnonymous);
-
-        startActivityForResult(intent, 0);
+        startActivity(intent);
         return true;
     }
 }

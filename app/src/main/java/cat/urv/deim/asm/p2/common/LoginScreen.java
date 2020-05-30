@@ -72,7 +72,6 @@ public class LoginScreen extends AppCompatActivity {
                     Intent intent = new Intent(LoginScreen.this, MainActivity.class);
                     intent.putExtra(Global.EMAIL,usersEmail);
                     intent.putExtra(Global.PASSWORD,usersPassword);
-                    intent.putExtra(Global.IS_ANONYMOUS, false);
                     editor.putBoolean(Global.IS_ANONYMOUS, false);
                     editor.apply();
                     startActivity(intent);
@@ -88,7 +87,6 @@ public class LoginScreen extends AppCompatActivity {
         anonymousButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-                intent.putExtra(Global.IS_ANONYMOUS, true);
                 editor.putBoolean(Global.IS_ANONYMOUS, true);
                 editor.apply();
                 startActivity(intent);
@@ -105,7 +103,6 @@ public class LoginScreen extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item){
         Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-        intent.putExtra(Global.IS_ANONYMOUS, true);
         startActivityForResult(intent, 0);
         return true;
     }

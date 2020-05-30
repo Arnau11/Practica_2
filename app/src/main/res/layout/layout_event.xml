@@ -49,7 +49,7 @@
                 android:gravity="left"
                 android:text="Descripció de l'event"
                 android:textColor="@color/colorTextGray"
-                android:textSize="15sp"></TextView>
+                android:textSize="@dimen/text_size"></TextView>
 
             <ToggleButton
                 android:id="@+id/fav_icon"

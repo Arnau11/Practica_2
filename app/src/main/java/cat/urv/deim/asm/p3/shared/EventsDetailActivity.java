@@ -71,10 +71,8 @@ public class EventsDetailActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Boolean isAnonymous = getIntent().getExtras().getBoolean(Global.IS_ANONYMOUS);
         Intent intent = new Intent(EventsDetailActivity.this, MainActivity.class);
-        intent.putExtra(Global.IS_ANONYMOUS, isAnonymous);
-        startActivityForResult(intent, 0);
+        startActivity(intent);
 
         return true;
     }

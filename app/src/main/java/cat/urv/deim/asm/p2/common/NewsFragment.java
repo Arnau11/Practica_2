@@ -7,9 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
-
-import cat.urv.deim.asm.p2.common.R;
 
 public class NewsFragment extends Fragment {
 

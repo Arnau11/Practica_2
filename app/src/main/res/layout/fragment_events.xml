@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     tools:context="cat.urv.deim.asm.p3.shared.EventsFragment">
-
     
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
