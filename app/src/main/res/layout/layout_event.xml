@@ -9,13 +9,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/dim_1"
         app:cardElevation="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:padding="@dimen/dim_2">
 
             <ImageView
                 android:id="@id/imageView"
@@ -31,11 +31,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/imageView"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="@dimen/dim_1"
                 android:gravity="left"
                 android:text="Títol"
                 android:textColor="@color/colorBlack"
-                android:textSize="20sp"></TextView>
+                android:textSize="@dimen/title_size">
+            </TextView>
 
             <TextView
                 android:id="@+id/textViewShortDesc"
@@ -43,8 +44,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textViewTitle"
                 android:layout_toLeftOf="@id/imageView"
-                android:layout_marginTop="9dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginTop="@dimen/dim_1"
+                android:layout_marginRight="@dimen/dim_1"
                 android:lines="2"
                 android:gravity="left"
                 android:text="Descripció de l'event"
@@ -53,29 +54,31 @@
 
             <ToggleButton
                 android:id="@+id/fav_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/dim_4"
+                android:layout_height="@dimen/dim_4"
                 android:layout_below="@+id/imageView"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginLeft="@dimen/dim_2"
+                android:layout_marginTop="@dimen/dim_2"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/custom_like_button"
                 android:focusable="true"
                 android:textOff=""
-                android:textOn=""></ToggleButton>
+                android:textOn="">
+            </ToggleButton>
 
             <ToggleButton
                 android:id="@+id/bookmark_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/dim_4"
+                android:layout_height="@dimen/dim_4"
                 android:layout_below="@+id/imageView"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginLeft="@dimen/dim_4"
+                android:layout_marginTop="@dimen/dim_2"
                 android:layout_toRightOf="@+id/fav_icon"
                 android:background="@drawable/custom_mark_button"
                 android:focusable="true"
                 android:textOff=""
-                android:textOn=""></ToggleButton>
+                android:textOn="">
+            </ToggleButton>
 
             <TextView
                 android:id="@+id/textViewTags"
@@ -83,10 +86,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageView"
                 android:layout_toRightOf="@+id/bookmark_icon"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/dim_3"
                 android:gravity="right"
-                android:text="WTM, Conference"></TextView>
-
+                android:text="WTM, Conference">
+            </TextView>
 
         </RelativeLayout>
 

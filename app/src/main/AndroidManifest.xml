@@ -13,7 +13,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name="cat.urv.deim.asm.p3.shared.FAQSActivity" />
         <activity android:name="cat.urv.deim.asm.p3.shared.EventsDetailActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" android:configChanges="orientation|screenSize"/>
         <activity android:name=".ErrorScreen" />
         <activity android:name=".LoginScreen" />
         <activity android:name=".HelpScreen3" />
