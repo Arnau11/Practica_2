@@ -14,7 +14,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
-    <!-- android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"-->
     <ExpandableListView
         android:id="@+id/eListView"
         android:layout_width="match_parent"

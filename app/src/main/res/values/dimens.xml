@@ -16,6 +16,8 @@
     <dimen name="dim_4">30dp</dimen>
     <dimen name="dim_8_dp">8dp</dimen>
     <dimen name="dim_indicator">705dp</dimen>
+    <dimen name="dim_height_butt">45dp</dimen>
+    <dimen name="dim_indicator_land">1290dp</dimen>
 
     //Intruction Dimensions
     <dimen name="photo_dimensions">250dp</dimen>

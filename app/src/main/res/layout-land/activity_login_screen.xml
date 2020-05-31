@@ -79,7 +79,7 @@
     <Button
         android:id="@+id/anonymousButton"
         android:layout_width="240dp"
-        android:layout_height="47dp"
+        android:layout_height="@dimen/dim_height_butt"
         android:text="@string/login_button_A"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"

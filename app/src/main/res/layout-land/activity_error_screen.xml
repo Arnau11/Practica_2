@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/UPS"
         android:textColor="@color/colorTextGray"
-        android:textSize="24sp"
+        android:textSize="@dimen/title_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +22,8 @@
 
     <Button
         android:id="@+id/tryAgainButton"
-        android:layout_width="201dp"
-        android:layout_height="45dp"
+        android:layout_width="@dimen/margin"
+        android:layout_height="@dimen/dim_height_butt"
         android:background="@color/colorButton"
         android:text="@string/try_again"
         android:textColor="#FFFFFF"
@@ -47,8 +47,8 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="341dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/your_username"
         android:textColor="@color/colorTextGray"
