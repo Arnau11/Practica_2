@@ -1,36 +1,35 @@
 <resources>
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">0dp</dimen>
     <dimen name="title_size">25sp</dimen>
-    <dimen name="nav_header_height">100dp</dimen>
-    <dimen name="text_margin">16dp</dimen>
-
-
     <dimen name="text_size">15sp</dimen>
     <dimen name="text_size_2">17sp</dimen>
+    <dimen name="title_size_2">20sp</dimen>
 
     <dimen name="dim_1">10dp</dimen>
     <dimen name="dim_2">15dp</dimen>
     <dimen name="dim_3">20dp</dimen>
     <dimen name="dim_4">30dp</dimen>
-    <dimen name="dim_8_dp">8dp</dimen>
-    <dimen name="dim_indicator">705dp</dimen>
-    <dimen name="dim_height_butt">45dp</dimen>
-    <dimen name="dim_indicator_land">1290dp</dimen>
+    <dimen name="dim_5">5dp</dimen>
+    <dimen name="dim_6">120dp</dimen>
+    <dimen name="dim_7">100dp</dimen>
+    <dimen name="dim_8">1dp</dimen>
+    <dimen name="dim_9">60dp</dimen>
+    <dimen name="dim_10">230dp</dimen>
 
-    //Intruction Dimensions
+
     <dimen name="photo_dimensions">250dp</dimen>
     <dimen name="margin">200dp</dimen>
     <dimen name="progress_bar_height">2dp</dimen>
-    <dimen name="progres_bar_margin_start">10dp</dimen>
     <dimen name="progres_bar_margin_bottom">4dp</dimen>
-    <dimen name="button_margin_end">60dp</dimen>
     <dimen name="button_margin_bottom">12dp</dimen>
     <dimen name="image_button_margin_start">14dp</dimen>
     <dimen name="image_button_margin_bottom">28dp</dimen>
-    <dimen name="photo_margin">120dp</dimen>
     <dimen name="text_margin_top">160dp</dimen>
+    <dimen name="splash_photo_margin_horizontal">140dp</dimen>
+    <dimen name="splash_photo_margin_vertical">270dp</dimen>
+    <dimen name="splash_photo_width">198dp</dimen>
+    <dimen name="photo_height">212dp</dimen>
+
+
 
 
 </resources>

@@ -200,16 +200,4 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState);
-        outState.putBundle("nav_state", NavHostFragment.findNavController(fragment).saveState());
-    }
-
-    @Override
-    public void onRestoreInstanceState(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        NavHostFragment.findNavController(fragment).restoreState(savedInstanceState.getBundle("nav_state"));
-    }
 }

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/nav_header_height"
+    android:layout_height="@dimen/dim_7"
     android:gravity="bottom"
     android:orientation="vertical">
 
@@ -12,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/font_text"
-        android:paddingLeft="@dimen/margin_4"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:paddingLeft="@dimen/dim_4"
         android:text="@string/nav_header_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="@dimen/title_size"
@@ -22,13 +20,9 @@
     <View
         android:id="@+id/divider"
         android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="@dimen/dim_8"
+        android:layout_marginTop="@dimen/dim_2"
         android:background="@color/colorGray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nav_header_title" />
-
 
 </LinearLayout>
