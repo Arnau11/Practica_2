@@ -15,6 +15,14 @@
     <dimen name="dim_9">60dp</dimen>
     <dimen name="dim_10">230dp</dimen>
 
+    <dimen name="dim_8_dp">8dp</dimen>
+    <dimen name="dim_indicator">705dp</dimen>
+    <dimen name="dim_height_butt">45dp</dimen>
+    <dimen name="dim_indicator_land">1290dp</dimen>
+    <dimen name="dim_butt_login">257dp</dimen>
+    <dimen name="dim_butt_login_an">263dp</dimen>
+    <dimen name="dim_butt_login_height">54dp</dimen>
+
 
     <dimen name="photo_dimensions">250dp</dimen>
     <dimen name="margin">200dp</dimen>
