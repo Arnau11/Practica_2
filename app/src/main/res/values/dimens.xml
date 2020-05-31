@@ -14,5 +14,7 @@
     <dimen name="dim_2">15dp</dimen>
     <dimen name="dim_3">20dp</dimen>
     <dimen name="dim_4">30dp</dimen>
+    <dimen name="dim_8_dp">8dp</dimen>
+    <dimen name="dim_indicator">705dp</dimen>
 
 </resources>

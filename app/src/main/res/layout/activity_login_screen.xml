@@ -63,19 +63,6 @@
         app:layout_constraintVertical_bias="0.709" />
 
     <Button
-        android:id="@+id/signInButton"
-        android:layout_width="255dp"
-        android:layout_height="45dp"
-        android:background="@color/colorButton"
-        android:text="@string/sign_in"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.822" />
-
-    <Button
         android:id="@+id/anonymousButton"
         android:layout_width="260dp"
         android:layout_height="54dp"
@@ -87,5 +74,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.924" />
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="255dp"
+        android:layout_height="45dp"
+        android:background="@color/colorButton"
+        android:text="@string/sign_in"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.822" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
