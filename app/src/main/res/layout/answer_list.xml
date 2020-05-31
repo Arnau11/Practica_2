@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="4dp"
+    android:padding="@dimen/dim_5"
     android:gravity="center"
     android:background="@color/colorWhite"
     android:layout_width="match_parent"
@@ -11,8 +11,8 @@
         android:id="@+id/answer_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"
-        android:paddingLeft="10dp"
+        android:layout_margin="@dimen/dim_1"
+        android:paddingLeft="@dimen/dim_1"
         android:text="Answer"
         android:textSize="@dimen/text_size" />
 

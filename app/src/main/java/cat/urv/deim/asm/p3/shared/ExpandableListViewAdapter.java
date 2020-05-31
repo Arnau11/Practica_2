@@ -12,7 +12,7 @@ import java.util.List;
 
 import cat.urv.deim.asm.p2.common.R;
 
-public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
+public class  ExpandableListViewAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> questionList;
