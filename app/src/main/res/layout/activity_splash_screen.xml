@@ -9,12 +9,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="133dp"
-        android:layout_height="189dp"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="271dp"
+        android:layout_width="@dimen/photo_dimensions"
+        android:layout_height="@dimen/photo_dimensions"
+        android:layout_marginStart="@dimen/splash_photo_margin_horizontal"
+        android:layout_marginTop="@dimen/splash_photo_margin_vertical"
+        android:layout_marginEnd="@dimen/splash_photo_margin_horizontal"
+        android:layout_marginBottom="@dimen/splash_photo_margin_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
