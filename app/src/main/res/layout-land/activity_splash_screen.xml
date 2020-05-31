@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="133dp"
-        android:layout_height="189dp"
+        android:layout_width="@dimen/splash_photo_width"
+        android:layout_height="@dimen/photo_height"
         android:layout_marginStart="@dimen/splash_photo_margin_horizontal"
         android:layout_marginTop="@dimen/splash_photo_margin_vertical"
         android:layout_marginEnd="@dimen/splash_photo_margin_horizontal"

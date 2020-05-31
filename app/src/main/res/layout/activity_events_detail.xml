@@ -25,9 +25,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:cropToPadding="false"
-                android:maxHeight="300dp"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop" />
 
             <View
                 android:layout_width="match_parent"
