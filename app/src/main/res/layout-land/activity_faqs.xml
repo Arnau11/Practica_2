@@ -20,6 +20,6 @@
         android:layout_height="match_parent"
         android:indicatorRight="@dimen/dim_indicator_land"
         android:layoutDirection="ltr"
-        android:padding="@dimen/dim_8_dp" />
+        android:padding="@dimen/dim_1" />
 
 </LinearLayout>

@@ -33,7 +33,7 @@
                 android:layout_toLeftOf="@id/imageView"
                 android:layout_marginRight="@dimen/dim_1"
                 android:gravity="left"
-                android:text="Títol"
+                android:text="@string/title"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/title_size_2">
             </TextView>
@@ -48,7 +48,7 @@
                 android:layout_marginRight="@dimen/dim_1"
                 android:lines="2"
                 android:gravity="left"
-                android:text="Descripció de l'event"
+                android:text="@string/description"
                 android:textColor="@color/colorTextGray"
                 android:textSize="@dimen/text_size"></TextView>
 
@@ -88,7 +88,7 @@
                 android:layout_toRightOf="@+id/bookmark_icon"
                 android:layout_marginTop="@dimen/dim_3"
                 android:gravity="right"
-                android:text="WTM, Conference">
+                android:text="@string/tags">
             </TextView>
 
         </RelativeLayout>

@@ -29,7 +29,6 @@ public class FAQSActivity extends AppCompatActivity {
     List<String> questionList;
     HashMap<String, List<String>> answerList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -62,7 +61,7 @@ public class FAQSActivity extends AppCompatActivity {
         answerList = new HashMap<String, List<String>>();
 
         try{
-            DataProvider dataProvider = DataProvider.getInstance(this);
+            DataProvider dataProvider = DataProvider.getInstance(this.getApplicationContext());
             List<Faq> faqs = dataProvider.getFaqs();
             int i = 0;
             while(i < faqs.size()) {
@@ -76,7 +75,7 @@ public class FAQSActivity extends AppCompatActivity {
             }
         }
         catch (NullPointerException exception){
-            Log.e(TAG,"Error accessing data");
+            Log.e(TAG,Global.ERROR_MESSAGE);
         }
 
     }

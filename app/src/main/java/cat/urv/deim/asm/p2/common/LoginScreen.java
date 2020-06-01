@@ -103,7 +103,7 @@ public class LoginScreen extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item){
         Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-        startActivityForResult(intent, 0);
+        startActivity(intent);
         return true;
     }
 

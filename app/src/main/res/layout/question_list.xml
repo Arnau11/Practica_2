@@ -15,6 +15,7 @@
         android:paddingLeft="@dimen/dim_1"
         android:text="Question TextView"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"/>
 
 </LinearLayout>

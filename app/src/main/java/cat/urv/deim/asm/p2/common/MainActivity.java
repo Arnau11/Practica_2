@@ -1,40 +1,24 @@
 package cat.urv.deim.asm.p2.common;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import cat.urv.deim.asm.libraries.commanagerdc.models.Article;
-import cat.urv.deim.asm.libraries.commanagerdc.models.CalendarItem;
-import cat.urv.deim.asm.libraries.commanagerdc.models.Event;
-import cat.urv.deim.asm.libraries.commanagerdc.models.Faq;
-import cat.urv.deim.asm.libraries.commanagerdc.models.New;
-import cat.urv.deim.asm.libraries.commanagerdc.models.Tag;
-import cat.urv.deim.asm.libraries.commanagerdc.providers.DataProvider;
 import cat.urv.deim.asm.p3.shared.EventsFragment;
 import cat.urv.deim.asm.p3.shared.FAQSActivity;
 import cat.urv.deim.asm.p3.shared.Global;
@@ -52,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        final SharedPreferences.Editor editor = prefs.edit();
         final boolean isAnonymous = prefs.getBoolean(Global.IS_ANONYMOUS, true);
 
 
@@ -184,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        drawer.closeDrawers();
     }
 
     @Override

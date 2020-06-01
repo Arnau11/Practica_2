@@ -50,6 +50,13 @@
 
     <string name="event_detail_title">Event Detail</string>
     <string name="web_page">Web Page:</string>
+    // auxiliar (just to see in the layout edition)
+    <string name="link">enlace:</string>
+
+    // Events Fragment auxiliar Strings
+    <string name="title">Title</string>
+    <string name="description">Event Description</string>
+    <string name="tags">Tags</string>
 
 
 </resources>

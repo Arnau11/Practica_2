@@ -24,7 +24,7 @@
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/photo_height"
+            android:layout_height="@dimen/ic_height"
             android:background="@color/color_profile_background"
             app:srcCompat="@drawable/profile_photo" />
 

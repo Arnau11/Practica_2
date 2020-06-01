@@ -14,6 +14,11 @@ public class Global {
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
     public static final String POSITION = "position";
+    public static final String ERROR_MESSAGE =  "Error accessing data";
+    public static final String FAV_CHECKED =  "favChecked";
+    public static final String BOOK_CHECKED =  "bookChecked";
+
+
 
 
     public static String getTags(List<Event> e, int pos){
