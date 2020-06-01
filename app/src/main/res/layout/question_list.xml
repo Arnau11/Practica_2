@@ -14,7 +14,7 @@
         android:layout_margin="@dimen/dim_1"
         android:paddingLeft="@dimen/dim_1"
         android:text="Question TextView"
-        android:textSize="16sp"
+        android:textSize="@dimen/text_size_2"
         android:textStyle="bold"
         android:textColor="@color/colorBlack"/>
 
